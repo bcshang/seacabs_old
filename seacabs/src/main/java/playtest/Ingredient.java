@@ -45,9 +45,9 @@ public class Ingredient {
 
     @Override
     public String toString() {
-        return "Type: " + type +
-                " Name: " + name +
-                " Amount: " + amount;
+        return "\tType: " + type +
+                "\n\tName: " + name +
+                "\n\tAmount: " + amount + "\n";
     }
 
 }

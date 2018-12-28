@@ -5,19 +5,17 @@ import java.util.ArrayList;
 public class Cocktail {
     String name;
     String source;
-    Ingredient spirit;
     ArrayList<Ingredient> ingredients;
     String garnishes;
     String style;
     String served;
     String special;
 
-    public Cocktail(String name, String source, Ingredient spirit,
+    public Cocktail(String name, String source,
                     ArrayList<Ingredient> ingredients, String garnishes,
                     String style, String served, String special) {
         this.name = name;
         this.source = source;
-        this.spirit = spirit;
         this.ingredients = ingredients;
         this.garnishes = garnishes;
         this.style = style;
@@ -31,10 +29,9 @@ public class Cocktail {
         String ret = "";
         ret += "Name: " + name + "\n";
         ret += "Source: " + source + "\n";
-        ret += "Spirit: " + spirit + "\n";
-        
+        ret += "Ingredients: " + "\n";
         for(int ii=0; ii<ingredients.size(); ii++) {
-            ret += ingredients.get(ii);
+            ret += ingredients.get(ii) + "\n";
         }
 
         ret += "Garnishes: " + garnishes + "\n";

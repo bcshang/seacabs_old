@@ -1,18 +1,12 @@
 package playtest;
 
 // TODO only import actually needed packages
-import java.io.File;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.DocumentBuilder;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Node;
-import org.w3c.dom.Element;
+import java.util.ArrayList;
 
 
 
@@ -31,7 +25,8 @@ public class Seacabs
         String folder = args[0];
 
         // TODO fix to work with & without the folder path thing
-        // File inputFile = new File(args[0] + "input.txt"); // Input.txt
+        // TODO make it so I don't have to initialize?
+        ArrayList<Cocktail> cocktailMasterList = new ArrayList<Cocktail>();
         BufferedReader reader;
         try {
             reader = new BufferedReader(new FileReader(folder + "inputs.txt"));
@@ -58,7 +53,7 @@ public class Seacabs
                         System.exit(0);
                 }
 
-                Parse.parseFile(folder + splitString[0], type);
+                cocktailMasterList = (ArrayList<Cocktail>)Parse.parseFile(folder + splitString[0], type);
 
                 // read next
                 line = reader.readLine();
@@ -68,6 +63,14 @@ public class Seacabs
 
         } catch(IOException e) {
             e.printStackTrace();
+            System.exit(0);
         }
+
+
+        System.out.println();
+        for(int ii=0; ii<cocktailMasterList.size(); ii++) {
+            System.out.println(cocktailMasterList.get(ii));
+        }
+
     }
 }
