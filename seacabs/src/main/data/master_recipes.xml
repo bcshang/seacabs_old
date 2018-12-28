@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<recipe>
+    <name> Daiquiri </name>
+    <source> unknown </source>
+    <ingredient type="spirit">
+        <name> rum </name>
+        <amount> 2 </amount>
+    </ingredient>
+    <ingredient type="syrup">
+        <name> simple syrup </name>
+        <amount> .75 </amount>
+    </ingredient>
+    <ingredient type="sour">
+        <name> lime juice </name>
+        <amount> 1 </amount>
+    </ingredient>
+    <garnish> lime wheel </garnish>
+    <style> shaken </style>
+    <served> up </served>
+    <special> N/A </special>
+</recipe>
+
