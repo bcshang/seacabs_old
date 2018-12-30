@@ -2,9 +2,13 @@ package playtest;
 
 // TODO only import actually needed packages
 
+import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+
+
+
 
 import java.util.ArrayList;
 
@@ -53,6 +57,7 @@ public class Seacabs
                         System.exit(0);
                 }
 
+                // TODO check if the type is correct coming back to remove warning
                 cocktailMasterList = (ArrayList<Cocktail>)Parse.parseFile(folder + splitString[0], type);
 
                 // read next
@@ -71,6 +76,8 @@ public class Seacabs
         for(int ii=0; ii<cocktailMasterList.size(); ii++) {
             System.out.println(cocktailMasterList.get(ii));
         }
+
+        Write.write(cocktailMasterList, folder, Common.XMLType.MASTER_RECIPES);
 
     }
 }
