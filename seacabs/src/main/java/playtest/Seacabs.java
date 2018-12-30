@@ -1,8 +1,9 @@
 package playtest;
 
-// TODO only import actually needed packages
+/**
+ * Main method for cocktail App
+ */
 
-import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,21 +17,30 @@ import java.util.ArrayList;
 
 public class Seacabs 
 {
+
+    public static void printHelp() {
+        System.out.println("How to use SeaCabs:");
+        System.out.println("Argument 1 should be folder path to data folder with the '/'");
+        System.out.println("The program looks for a file called input.txt to parse from");
+        System.exit(0);
+    }
+
     public static void main( String[] args )
     {
         System.out.println( "SeaCabs Started!" );
+        
+        
         if(args.length != 1) {
-            System.out.println("How to use SeaCabs:");
-            System.out.println("Argument 1 should be folder path to data folder with the '/'");
-            System.out.println("The program looks for a file called input.txt to parse from");
-            System.exit(0);
-        }
+            printHelp();
+        } 
 
         String folder = args[0];
-
+        SeaList.folderName = folder;
         // TODO fix to work with & without the folder path thing
         // TODO make it so I don't have to initialize?
-        ArrayList<Cocktail> cocktailMasterList = new ArrayList<Cocktail>();
+        // 
+        ArrayList<SeaList> seaList = new ArrayList<SeaList>();
+
         BufferedReader reader;
         try {
             reader = new BufferedReader(new FileReader(folder + "inputs.txt"));
@@ -42,6 +52,7 @@ public class Seacabs
                 switch(splitString[1]) {
                     case "MASTER_RECIPES":
                         type = Common.XMLType.MASTER_RECIPES;
+                        seaList.add(new SeaList((ArrayList<Cocktail>)Parse.parseFile(folder + splitString[0], type), type, splitString[0]));
                         break;
                     case "PERSONAL_RECIPES":
                         type = Common.XMLType.PERSONAL_RECIPES;
@@ -58,7 +69,6 @@ public class Seacabs
                 }
 
                 // TODO check if the type is correct coming back to remove warning
-                cocktailMasterList = (ArrayList<Cocktail>)Parse.parseFile(folder + splitString[0], type);
 
                 // read next
                 line = reader.readLine();
@@ -67,17 +77,18 @@ public class Seacabs
             reader.close();
 
         } catch(IOException e) {
-            e.printStackTrace();
+            System.out.println("Error has occurred in parsing");
+            printHelp();
             System.exit(0);
         }
 
 
-        System.out.println();
-        for(int ii=0; ii<cocktailMasterList.size(); ii++) {
-            System.out.println(cocktailMasterList.get(ii));
-        }
+        // System.out.println();
+        // for(int ii=0; ii<cocktailMasterList.size(); ii++) {
+        //     System.out.println(cocktailMasterList.get(ii));
+        // }
 
-        Write.write(cocktailMasterList, folder, Common.XMLType.MASTER_RECIPES);
+        Write.write(seaList.get(0));
 
     }
 }

@@ -1,23 +1,23 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <recipes>
     <recipe>
-        <name> Daiquiri </name>
-        <source> Tom Macy </source>
-        <ingredient type="spirit">
-            <name> light rum </name>
-            <amount> 2 </amount>
+        <name>Daiquiri</name>
+        <source>Tom Macy</source>
+        <ingredient>
+            <name>light rum</name>
+            <amount>2.0</amount>
         </ingredient>
-        <ingredient type="syrup">
-            <name> simple syrup </name>
-            <amount> .75 </amount>
+        <ingredient>
+            <name>simple syrup</name>
+            <amount>0.75</amount>
         </ingredient>
-        <ingredient type="sour">
-            <name> lime juice </name>
-            <amount> 1 </amount>
+        <ingredient>
+            <name>lime juice</name>
+            <amount>1.0</amount>
         </ingredient>
-        <garnish> lime wheel </garnish>
-        <style> shaken </style>
-        <served> up </served>
-        <special> N/A </special>
+        <garnish>lime wheel</garnish>
+        <style>shaken</style>
+        <served>up</served>
+        <special>N/A</special>
     </recipe>
 </recipes>
