@@ -44,7 +44,7 @@ public class Parse {
      */
     public static ArrayList<Cocktail> parseMasterRecipe(String fileName) {
         ArrayList<Cocktail> cocktails = new ArrayList<Cocktail>();
-        System.out.println("Parsing from " + fileName);
+        System.out.println("Parsing master recipes from " + fileName);
         try {
             File inputFile = new File(fileName);
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -100,5 +100,40 @@ public class Parse {
 
 
     // Parses Cocktail Options
+    public static ArrayList<String> parseServed(String fileName) {
+        ArrayList<String> servedList = new ArrayList<String>();
+        System.out.println("Parsing served from " + fileName);
+        try {
+            File inputFile = new File(fileName);
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            NodeList nList = doc.getElementsByTagName("option");
 
+            // Search for correct type option
+            for(int ii = 0; ii < nList.getLength(); ii++) {
+                Node nNode = nList.item(ii);
+
+                if(nNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element eElement = (Element) nNode;
+                    String type = eElement.getAttribute("type");
+                    if(type.equals("served")) {
+                        System.out.println("Found Served");
+                        NodeList servList = eElement.getElementsByTagName("served");
+                        for(int jj = 0; jj < servList.getLength(); jj++) {
+                            Element servElement = (Element) servList.item(jj);
+                            String servedOption = servList.item(jj).getTextContent().trim();
+                            servedList.add(servedOption);
+                        }
+                        break;
+                    }
+                }
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return servedList;
+    }
 }

@@ -1,7 +1,7 @@
 package playtest;
 
 /**
- * Main method for cocktail App
+ * Main functions for cocktail App
  */
 
 import java.io.BufferedReader;
@@ -11,14 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.Parent;
-import javafx.stage.Stage;
-
-
-public class Seacabs extends Application { 
+public class Seacabs{ 
 
     public static void printHelp() {
         System.out.println("How to use SeaCabs:");
@@ -27,37 +20,36 @@ public class Seacabs extends Application {
         System.exit(0);
     }
 
-    @Override
-    public void start(Stage stage) {
-        Parent root;
-        try {
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("cocktailCreationGUI.fxml"));
 
-            stage.setTitle("Welcome to Seacabs!");
-            stage.setScene(new Scene(root));
+    ArrayList<SeaList> masterCocktailLists = new ArrayList<SeaList>();
+    String folder;
+    ArrayList<String> servedList;
 
-            stage.show();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void main( String[] args )
-    {
-
-        System.out.println( "SeaCabs Started!" );
-        
+    public Seacabs(String [] args) {
+        System.out.println( "Seacabs Created!" );
         if(args.length != 1) {
             printHelp();
         } 
 
-        String folder = args[0];
+        folder = args[0];
+        importData();
+    }
+
+
+
+
+    public ArrayList<String> getServedList() {
+        return servedList;
+    }
+
+
+    public void importData()
+    {
+
         SeaList.folderName = folder;
         // TODO fix to work with & without the folder path thing
         // TODO make it so I don't have to initialize?
         // 
-        ArrayList<SeaList> masterCocktailLists = new ArrayList<SeaList>();
 
         BufferedReader reader;
         try {
@@ -100,7 +92,8 @@ public class Seacabs extends Application {
             System.exit(0);
         }
 
-
+        // Try parsing cocktail options
+        servedList = Parse.parseServed(folder + "options.xml");
         // System.out.println();
         // for(int ii=0; ii<cocktailMasterList.size(); ii++) {
         //     System.out.println(cocktailMasterList.get(ii));
@@ -110,6 +103,6 @@ public class Seacabs extends Application {
 
 
         // Start the GUI
-        launch();
+
     }
 }
