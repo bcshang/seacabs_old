@@ -35,24 +35,41 @@ public class GUIController {
     @FXML
     private ChoiceBox styleChoiceBox;
 
+    @FXML
+    private ChoiceBox fileChoiceBox;
+
 
     public void updateServedList(ArrayList<String> servedList) {
         servedChoiceBox.setItems(FXCollections.observableArrayList(servedList));
     }
 
+    public void updateStyleList(ArrayList<String> styleList) {
+        styleChoiceBox.setItems(FXCollections.observableArrayList(styleList));
+    }
+
+    public void updateCFileList(ArrayList<String> cFileList) {
+        fileChoiceBox.setItems(FXCollections.observableArrayList(cFileList));
+    }
+
 
     public void printDebug() {
         System.out.println("Recipe Saved!");
-        String name = cnameTextField.getText();
-        System.out.println("Name is " + name);
-        String source = cSourceTextField.getText();
-        System.out.println("Source is " + source);
-        String garnish = cGarnishTextField.getText();
-        System.out.println("Garnish is " + garnish);
-        String special = cSpecialTextField.getText();
-        System.out.println("Special is " + special);
-        String tastingNotes = cTasNotTextArea.getText();
-        System.out.println("Tasting is " + tastingNotes);   
+        
+        System.out.println("Name is " + cnameTextField.getText());
+        
+        System.out.println("Source is " + cSourceTextField.getText());
+        
+        System.out.println("Garnish is " + cGarnishTextField.getText());
+        
+        System.out.println("Special is " + cSpecialTextField.getText());
+        
+        System.out.println("Tasting is " + cTasNotTextArea.getText());   
+
+        System.out.println("Served is " + servedChoiceBox.getValue());
+
+        System.out.println("Style is " + styleChoiceBox.getValue());
+
+        System.out.println("File is " + fileChoiceBox.getValue());
     }
 
 
@@ -60,6 +77,7 @@ public class GUIController {
     private void saveRecipeOnClick() {
 
         printDebug();
+
     }
 
     @FXML

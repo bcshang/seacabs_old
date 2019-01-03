@@ -122,7 +122,6 @@ public class Parse {
                         System.out.println("Found Served");
                         NodeList servList = eElement.getElementsByTagName("served");
                         for(int jj = 0; jj < servList.getLength(); jj++) {
-                            Element servElement = (Element) servList.item(jj);
                             String servedOption = servList.item(jj).getTextContent().trim();
                             servedList.add(servedOption);
                         }
@@ -135,5 +134,42 @@ public class Parse {
             e.printStackTrace();
         }
         return servedList;
+    }
+
+    // Parses Cocktail Options
+    public static ArrayList<String> parseStyle(String fileName) {
+        ArrayList<String> styleList = new ArrayList<String>();
+        System.out.println("Parsing served from " + fileName);
+        try {
+            File inputFile = new File(fileName);
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            NodeList nList = doc.getElementsByTagName("option");
+
+            // Search for correct type option
+            for(int ii = 0; ii < nList.getLength(); ii++) {
+                Node nNode = nList.item(ii);
+
+                if(nNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element eElement = (Element) nNode;
+                    String type = eElement.getAttribute("type");
+                    if(type.equals("style")) {
+                        System.out.println("Found Style");
+                        NodeList styList = eElement.getElementsByTagName("style");
+                        for(int jj = 0; jj < styList.getLength(); jj++) {
+                            String styleOption = styList.item(jj).getTextContent().trim();
+                            styleList.add(styleOption);
+                        }
+                        break;
+                    }
+                }
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return styleList;
     }
 }

@@ -24,6 +24,7 @@ public class Seacabs{
     ArrayList<SeaList> masterCocktailLists = new ArrayList<SeaList>();
     String folder;
     ArrayList<String> servedList;
+    ArrayList<String> styleList;
 
     public Seacabs(String [] args) {
         System.out.println( "Seacabs Created!" );
@@ -42,6 +43,18 @@ public class Seacabs{
         return servedList;
     }
 
+    public ArrayList<String> getStyleList() {
+        return styleList;
+    }
+
+    public ArrayList<String> getCocktailFileList() {
+        ArrayList<String> cFileList = new ArrayList<String>();
+        for(int ii=0; ii<masterCocktailLists.size(); ii++) {
+            cFileList.add(masterCocktailLists.get(ii).getFile());
+        }
+        return cFileList;
+    }
+
 
     public void importData()
     {
@@ -49,7 +62,6 @@ public class Seacabs{
         SeaList.folderName = folder;
         // TODO fix to work with & without the folder path thing
         // TODO make it so I don't have to initialize?
-        // 
 
         BufferedReader reader;
         try {
@@ -94,12 +106,11 @@ public class Seacabs{
 
         // Try parsing cocktail options
         servedList = Parse.parseServed(folder + "options.xml");
+        styleList = Parse.parseStyle(folder + "options.xml");
         // System.out.println();
         // for(int ii=0; ii<cocktailMasterList.size(); ii++) {
         //     System.out.println(cocktailMasterList.get(ii));
         // }
-
-        Write.write(masterCocktailLists.get(0));
 
 
         // Start the GUI

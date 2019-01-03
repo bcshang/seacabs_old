@@ -18,7 +18,7 @@
             <ChoiceBox id="servedChoiceBox" fx:id="servedChoiceBox" layoutX="459.0" layoutY="61.0" prefWidth="150.0" />
             <ChoiceBox id="styleChoiceBox" fx:id="styleChoiceBox" layoutX="459.0" layoutY="100.0" prefWidth="150.0" />
             <TextField id="cSpecialTextField" fx:id="cSpecialTextField" layoutX="448.0" layoutY="141.0" promptText="Special Instructions" />
-            <ChoiceBox layoutX="359.0" layoutY="352.0" prefWidth="150.0" />
+            <ChoiceBox id="fileChoiceBox" fx:id="fileChoiceBox" layoutX="359.0" layoutY="352.0" prefWidth="150.0" />
             <TextArea id="cTasNotTextArea" fx:id="cTasNotTextArea" layoutX="22.0" layoutY="178.0" prefHeight="200.0" prefWidth="200.0" promptText="Tasting Notes" />
       </children>
     </AnchorPane>

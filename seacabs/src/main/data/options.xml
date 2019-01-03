@@ -5,10 +5,11 @@
         <served>on the rocks</served>
     </option>
     <option type="style">
+        <style>blended</style>
+        <style>built in glass</style>
+        <style>reverse dry shake</style>
         <style>shaken</style>
         <style>shaken, double strain</style>
         <style>stirred</style>
-        <style>built in glass</style>
-        <style>reverse dry shake</style>
     </option>
 </options>
