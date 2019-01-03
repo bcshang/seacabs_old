@@ -31,7 +31,7 @@ public class Seacabs extends Application {
     public void start(Stage stage) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("mainGUI.fxml"));
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("cocktailCreationGUI.fxml"));
 
             stage.setTitle("Welcome to Seacabs!");
             stage.setScene(new Scene(root));

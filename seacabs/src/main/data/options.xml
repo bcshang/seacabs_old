@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<options>
+    <option type="served">
+        <served>up</served>
+        <served>on the rocks</served>
+    </option>
+    <option type="style">
+        <style>shaken</style>
+        <style>shaken, double strain</style>
+        <style>stirred</style>
+        <style>built in glass</style>
+        <style>reverse dry shake</style>
+    </option>
+</options>
