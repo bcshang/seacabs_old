@@ -27,15 +27,13 @@ public class Seacabs extends Application {
         System.exit(0);
     }
 
-    public Seacabs(){}
-
     @Override
     public void start(Stage stage) {
         Parent root;
         try {
             root = FXMLLoader.load(getClass().getClassLoader().getResource("mainGUI.fxml"));
 
-            stage.setTitle("It works!");
+            stage.setTitle("Welcome to Seacabs!");
             stage.setScene(new Scene(root));
 
             stage.show();
