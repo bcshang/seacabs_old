@@ -53,7 +53,7 @@ public class Cocktail {
         return ret;
     }
 
-    public void toXML(Document doc, Element root) {
+    public void toXML(Document doc, Element root, Common.XMLType type) {
 
         // Wrapper element
         Element xcocktail = doc.createElement("recipe");
@@ -87,7 +87,6 @@ public class Cocktail {
         Element xspecial = doc.createElement("special");
         xspecial.appendChild(doc.createTextNode(this.special));
         xcocktail.appendChild(xspecial);        
-
     } 
     
 }

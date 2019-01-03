@@ -16,7 +16,7 @@ public class Parse {
     public static ArrayList<?> parseFile(String fileName, Common.XMLType type) {
         switch(type) {
             case MASTER_RECIPES:
-                return parseRecipe(fileName);
+                return parseMasterRecipe(fileName);
                 // break;
             case PERSONAL_RECIPES:
                 return null;
@@ -36,7 +36,13 @@ public class Parse {
         return n.getElementsByTagName(tag).item(0).getTextContent().trim();
     }
 
-    public static ArrayList<Cocktail> parseRecipe(String fileName) {
+
+    /**
+     * Parses master recipe list and returns an arraylist of the cocktails found
+     * @param  fileName The complete filepath of the file to be parsed
+     * @return          Arraylist of Cocktail Classes
+     */
+    public static ArrayList<Cocktail> parseMasterRecipe(String fileName) {
         ArrayList<Cocktail> cocktails = new ArrayList<Cocktail>();
         System.out.println("Parsing from " + fileName);
         try {
@@ -61,9 +67,10 @@ public class Parse {
                     for(int jj = 0; jj < ingList.getLength(); jj++) {
                         Element ingElement = (Element) ingList.item(jj);
                         String ingName = getInner(ingElement, "name");
-                        double amount = Double.parseDouble(getInner(ingElement, "amount"));
-                        String type = ingElement.getAttribute("type");
-                        Ingredient ing = new Ingredient(ingName, type, amount); // TODO add Type
+                        String ingUnit = getInner(ingElement, "unit");
+                        double ingAmount = Double.parseDouble(getInner(ingElement, "amount"));
+                        String ingType = ingElement.getAttribute("type");
+                        Ingredient ing = new Ingredient(ingName, ingType, ingAmount, ingUnit);
                         ingredients.add(ing);
                     }
 
@@ -79,8 +86,6 @@ public class Parse {
                 }
 
             }
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }

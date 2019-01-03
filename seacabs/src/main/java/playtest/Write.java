@@ -42,7 +42,7 @@ public class Write {
             switch(seaList.getType()) {
                     case MASTER_RECIPES:
                         for(int ii=0; ii<list.size(); ii++) {
-                            ((Cocktail)(list.get(ii))).toXML(doc, rootElement);
+                            ((Cocktail)(list.get(ii))).toXML(doc, rootElement, seaList.getType());
                         }                
                         break;
                     case PERSONAL_RECIPES:

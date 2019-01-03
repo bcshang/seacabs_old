@@ -8,15 +8,17 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-
-
-
 import java.util.ArrayList;
 
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.Parent;
+import javafx.stage.Stage;
 
-public class Seacabs 
-{
+
+public class Seacabs extends Application { 
 
     public static void printHelp() {
         System.out.println("How to use SeaCabs:");
@@ -25,10 +27,28 @@ public class Seacabs
         System.exit(0);
     }
 
+    public Seacabs(){}
+
+    @Override
+    public void start(Stage stage) {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("mainGUI.fxml"));
+
+            stage.setTitle("It works!");
+            stage.setScene(new Scene(root));
+
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main( String[] args )
     {
+
         System.out.println( "SeaCabs Started!" );
-        
         
         if(args.length != 1) {
             printHelp();
@@ -39,7 +59,7 @@ public class Seacabs
         // TODO fix to work with & without the folder path thing
         // TODO make it so I don't have to initialize?
         // 
-        ArrayList<SeaList> seaList = new ArrayList<SeaList>();
+        ArrayList<SeaList> masterCocktailLists = new ArrayList<SeaList>();
 
         BufferedReader reader;
         try {
@@ -52,7 +72,7 @@ public class Seacabs
                 switch(splitString[1]) {
                     case "MASTER_RECIPES":
                         type = Common.XMLType.MASTER_RECIPES;
-                        seaList.add(new SeaList((ArrayList<Cocktail>)Parse.parseFile(folder + splitString[0], type), type, splitString[0]));
+                        masterCocktailLists.add(new SeaList((ArrayList<Cocktail>)Parse.parseFile(folder + splitString[0], type), type, splitString[0]));
                         break;
                     case "PERSONAL_RECIPES":
                         type = Common.XMLType.PERSONAL_RECIPES;
@@ -88,7 +108,10 @@ public class Seacabs
         //     System.out.println(cocktailMasterList.get(ii));
         // }
 
-        Write.write(seaList.get(0));
+        Write.write(masterCocktailLists.get(0));
 
+
+        // Start the GUI
+        launch();
     }
 }

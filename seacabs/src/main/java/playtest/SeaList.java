@@ -18,6 +18,17 @@ public class SeaList {
         this.fileName = fileName;
     }
 
+
+    public void sortList() {
+
+    }
+
+
+    public void add(Object obj) {
+        
+    }
+
+
     public ArrayList<?> getList() {
         return list;
     }

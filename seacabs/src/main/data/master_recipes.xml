@@ -6,14 +6,17 @@
         <ingredient>
             <name>light rum</name>
             <amount>2.0</amount>
+            <unit>oz</unit>
         </ingredient>
         <ingredient>
             <name>simple syrup</name>
             <amount>0.75</amount>
+            <unit>oz</unit>
         </ingredient>
         <ingredient>
             <name>lime juice</name>
             <amount>1.0</amount>
+            <unit>oz</unit>
         </ingredient>
         <garnish>lime wheel</garnish>
         <style>shaken</style>
