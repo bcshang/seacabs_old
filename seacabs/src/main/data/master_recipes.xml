@@ -3,17 +3,17 @@
     <recipe>
         <name>Daiquiri</name>
         <source>Tom Macy</source>
-        <ingredient>
+        <ingredient type="spirit">
             <name>light rum</name>
             <amount>2.0</amount>
             <unit>oz</unit>
         </ingredient>
-        <ingredient>
+        <ingredient type="sweet">
             <name>simple syrup</name>
             <amount>0.75</amount>
             <unit>oz</unit>
         </ingredient>
-        <ingredient>
+        <ingredient type="sour">
             <name>lime juice</name>
             <amount>1.0</amount>
             <unit>oz</unit>

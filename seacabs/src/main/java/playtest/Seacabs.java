@@ -22,6 +22,7 @@ public class Seacabs{
 
 
     ArrayList<SeaList> masterCocktailLists = new ArrayList<SeaList>();
+    ArrayList<SeaList> masterIngredientList = new ArrayList<SeaList>();
     String folder;
     ArrayList<String> servedList;
     ArrayList<String> styleList;
@@ -55,6 +56,16 @@ public class Seacabs{
         return cFileList;
     }
 
+    // TODO allow for more master lists
+    public ArrayList<String> getIngredientList() {
+        ArrayList<Ingredient> ingList = (ArrayList<Ingredient>)masterIngredientList.get(0).getList();
+        ArrayList<String> ingString = new ArrayList<String>();
+        for(int ii=0; ii<ingList.size(); ii++) {
+            ingString.add(ingList.get(ii).getName());
+        }
+        return ingString;
+    }
+
 
     public void importData()
     {
@@ -84,6 +95,7 @@ public class Seacabs{
                         break;
                     case "MASTER_INGREDIENTS":
                         type = Common.XMLType.MASTER_INGREDIENTS;
+                        masterIngredientList.add(new SeaList((ArrayList<Ingredient>)Parse.parseFile(folder + splitString[0], type), type, splitString[0]));
                         break;
                     default:
                         System.out.println(splitString[1] + " is not supported");
@@ -107,6 +119,8 @@ public class Seacabs{
         // Try parsing cocktail options
         servedList = Parse.parseServed(folder + "options.xml");
         styleList = Parse.parseStyle(folder + "options.xml");
+
+
         // System.out.println();
         // for(int ii=0; ii<cocktailMasterList.size(); ii++) {
         //     System.out.println(cocktailMasterList.get(ii));

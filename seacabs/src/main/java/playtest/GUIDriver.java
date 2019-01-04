@@ -34,6 +34,7 @@ public class GUIDriver extends Application {
             guiControl.updateServedList(seac.getServedList());
             guiControl.updateStyleList(seac.getStyleList());
             guiControl.updateCFileList(seac.getCocktailFileList());
+            guiControl.updateIngredientPickerChoiceBox(seac.getIngredientList());
 
 
             stage.show();

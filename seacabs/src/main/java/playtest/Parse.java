@@ -25,12 +25,13 @@ public class Parse {
                 return null;
                 // break; 
             case MASTER_INGREDIENTS:
-                return null;
+                return parseMasterIngredients(fileName);
                 // break;
             default:
                 return null;
         }
     }
+
 
     public static String getInner(Element n, String tag) {
         return n.getElementsByTagName(tag).item(0).getTextContent().trim();
@@ -172,4 +173,34 @@ public class Parse {
         }
         return styleList;
     }
+
+
+    public static ArrayList<Ingredient> parseMasterIngredients(String fileName) {
+        ArrayList<Ingredient> ingList = new ArrayList<Ingredient>();
+        System.out.println("Parsing master ingredients from " + fileName);
+        try {
+            File inputFile = new File(fileName);
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            NodeList nList = doc.getElementsByTagName("ingredient");
+            // System.out.println("Found " + nList.getLength() + " ingredients");
+            for(int ii = 0; ii < nList.getLength(); ii++) {
+                    Node nNode = nList.item(ii);
+                    Element eElement = (Element) nNode;
+                    String name = getInner(eElement, "name");
+                    String description = getInner(eElement, "description");
+                    String ingType = eElement.getAttribute("type");
+                    Ingredient ing = new Ingredient(name, ingType, description);
+                    ingList.add(ing);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        // System.out.println("Found " + ingList.size() + " ingredients");
+        return ingList;
+    }
+
+
 }

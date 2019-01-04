@@ -5,7 +5,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TableColumn;
 import javafx.collections.FXCollections;
+
 
 import java.util.ArrayList;
 
@@ -38,6 +41,12 @@ public class GUIController {
     @FXML
     private ChoiceBox fileChoiceBox;
 
+    @FXML
+    private TableView ingredientTableView;
+
+    @FXML
+    private ChoiceBox ingredientPickerChoiceBox;
+
 
     public void updateServedList(ArrayList<String> servedList) {
         servedChoiceBox.setItems(FXCollections.observableArrayList(servedList));
@@ -49,6 +58,10 @@ public class GUIController {
 
     public void updateCFileList(ArrayList<String> cFileList) {
         fileChoiceBox.setItems(FXCollections.observableArrayList(cFileList));
+    }
+
+    public void updateIngredientPickerChoiceBox(ArrayList<String> ingList) {
+        ingredientPickerChoiceBox.setItems(FXCollections.observableArrayList(ingList));
     }
 
 
@@ -77,11 +90,11 @@ public class GUIController {
     private void saveRecipeOnClick() {
 
         printDebug();
-
     }
 
     @FXML
     private void initialize(){
+
         System.out.println("Initializing GUI Controller");
     }
 

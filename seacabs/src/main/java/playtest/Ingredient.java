@@ -11,18 +11,33 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 public class Ingredient {
+    enum ingType {
+        MINIMAL, PERSONAL, FULL;
+    }
+
+    ingType ingt;
+
     String name;
     String type;
     double amount;
     String unit;
 
+    String description;
+    String review;
     public Ingredient(String name, String type, double amount, String unit) {
         this.name = name;
         this.type = type;
         this.amount = amount;
         this.unit = unit;
+        ingt = ingType.FULL;
     }
 
+    public Ingredient(String name, String type, String description) {
+        this.name = name;
+        this.type = type;
+        this.description = description;
+        ingt = ingType.MINIMAL;
+    }
 
     // Setters
     public void setName(String name) {
