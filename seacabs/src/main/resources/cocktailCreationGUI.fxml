@@ -33,9 +33,9 @@
             </TableView>
             <AnchorPane layoutX="257.0" layoutY="376.0" prefHeight="124.0" prefWidth="584.0">
                <children>
-                  <Button layoutX="137.0" layoutY="84.0" mnemonicParsing="false" text="Add Ingredient" />
+                  <Button id="addIngredientButton" fx:id="addIngredientButton" layoutX="137.0" layoutY="84.0" mnemonicParsing="false" onAction="#addIngredientOnClick" text="Add Ingredient" />
                   <ChoiceBox id="ingredientPickerChoiceBox" fx:id="ingredientPickerChoiceBox" layoutY="14.0" prefHeight="26.0" prefWidth="387.0" />
-                  <TextField layoutX="158.0" layoutY="49.0" prefHeight="26.0" prefWidth="72.0" promptText="Amount" />
+                  <TextField id="ingredientAmountTextField" fx:id="ingredientAmountTextField" layoutX="158.0" layoutY="49.0" prefHeight="26.0" prefWidth="72.0" promptText="Amount" />
                   <Button layoutX="437.0" layoutY="49.0" mnemonicParsing="false" text="Create Ingredient" />
                </children>
             </AnchorPane>

@@ -46,6 +46,10 @@ public class GUIController {
 
     @FXML
     private ChoiceBox ingredientPickerChoiceBox;
+    @FXML
+    private Button addIngredientButton;
+    @FXML
+    private TextField ingredientAmountTextField;
 
 
     public void updateServedList(ArrayList<String> servedList) {
@@ -91,6 +95,24 @@ public class GUIController {
 
         printDebug();
     }
+
+    @FXML
+    private void addIngredientOnClick() {
+        String ingredient = (String)ingredientPickerChoiceBox.getValue();
+        String amount = ingredientAmountTextField.getText();
+        double damount;
+        try {
+            damount = Double.parseDouble(amount); 
+        } catch(Exception e) {
+            System.out.println("Failed to add ingredient");
+            return;
+        }
+        if(!ingredient.equals(""))
+            System.out.println("Added " + amount + " of " + ingredient);
+        else 
+            System.out.println("Failed to add ingredient");
+    }
+
 
     @FXML
     private void initialize(){
