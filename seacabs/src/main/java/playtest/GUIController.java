@@ -8,9 +8,12 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class GUIController {
 
@@ -33,6 +36,9 @@ public class GUIController {
     private Button saveRecipeButton;
 
     @FXML
+    private Button removeIngredientButton;
+
+    @FXML
     private ChoiceBox servedChoiceBox;
 
     @FXML
@@ -43,14 +49,42 @@ public class GUIController {
 
     @FXML
     private TableView ingredientTableView;
+    @FXML
+    private TableColumn cTableName;
+    @FXML
+    private TableColumn cTableType;
+    @FXML
+    private TableColumn cTableAmount;
+    @FXML
+    private TableColumn cTableUnit;
+
 
     @FXML
     private ChoiceBox ingredientPickerChoiceBox;
+    @FXML
+    private ChoiceBox unitChoiceBox;
     @FXML
     private Button addIngredientButton;
     @FXML
     private TextField ingredientAmountTextField;
 
+
+    Seacabs seac;
+    SeaList ingredientMaster;
+
+    public void setSeac(Seacabs seac) {
+        this.seac = seac;
+        updateServedList(seac.getServedList());
+        updateStyleList(seac.getStyleList());
+        updateUnitList(seac.getUnitList());
+        updateCFileList(seac.getCocktailFileList());
+        updateIngredientPickerChoiceBox(seac.getIngredientListString());
+        updateIngredientMaster(seac.getIngredientList());
+    }
+
+    public void updateIngredientMaster(SeaList list) {
+        ingredientMaster = list;
+    }
 
     public void updateServedList(ArrayList<String> servedList) {
         servedChoiceBox.setItems(FXCollections.observableArrayList(servedList));
@@ -58,6 +92,10 @@ public class GUIController {
 
     public void updateStyleList(ArrayList<String> styleList) {
         styleChoiceBox.setItems(FXCollections.observableArrayList(styleList));
+    }
+
+    public void updateUnitList(ArrayList<String> unitList) {
+        unitChoiceBox.setItems(FXCollections.observableArrayList(unitList));
     }
 
     public void updateCFileList(ArrayList<String> cFileList) {
@@ -87,19 +125,88 @@ public class GUIController {
         System.out.println("Style is " + styleChoiceBox.getValue());
 
         System.out.println("File is " + fileChoiceBox.getValue());
+
+        for(int ii=0; ii<ingredientTableView.getItems().size(); ii++) {
+            System.out.println(ingredientTableView.getItems().get(ii));
+        }
+
     }
 
+    @FXML
+    private void removeIngredientOnClick() {
+        ObservableList<Ingredient> ingredientSelected, allIngredients;
+        allIngredients = ingredientTableView.getItems();
+        ingredientSelected = ingredientTableView.getSelectionModel().getSelectedItems();
+
+        ingredientSelected.forEach(allIngredients::remove);
+    }
 
     @FXML
     private void saveRecipeOnClick() {
-
         printDebug();
+        List<Ingredient> ingList = ingredientTableView.getItems();
+        ArrayList<Ingredient> ingArrayList;
+        if (ingList instanceof ArrayList<?>) {
+            ingArrayList = (ArrayList<Ingredient>) ingList;
+        } else {
+            ingArrayList = new ArrayList<Ingredient>(ingList);
+        }
+
+        String name = cnameTextField.getText();
+        String source = cSourceTextField.getText();
+        String garnish = cGarnishTextField.getText();
+        String special = cSpecialTextField.getText();
+        String tasting = cSpecialTextField.getText();
+        String served = servedChoiceBox.getValue().toString();
+        String style = styleChoiceBox.getValue().toString();
+        String file = fileChoiceBox.getValue().toString();
+
+        // Find what file to add to
+        SeaList addedToList = null;
+        ArrayList<SeaList> tempList = seac.getMasterCocktailLists();
+        for(int ii=0; ii < tempList.size(); ii++) {
+            if(tempList.get(ii).getFile().equalsIgnoreCase(file)) {
+                addedToList = tempList.get(ii);
+                break;
+            }
+        }
+        if(addedToList == null) {
+            tempList = seac.getPersonalCocktailLists();
+            for(int ii=0; ii < tempList.size(); ii++) {
+                if(tempList.get(ii).getFile().equalsIgnoreCase(file)) {
+                    addedToList = tempList.get(ii);
+                    break;
+                }
+            }
+        }
+        
+        if(addedToList == null) {
+            System.out.println("Error finding list to add to");
+            System.exit(0);
+        }
+
+        Cocktail ct;
+        if(addedToList.getType() == Common.XMLType.MASTER_RECIPES)
+            ct = new Cocktail(name, source, ingArrayList, garnish, style, served, special);
+        else // assume personal recipe
+            ct = new Cocktail(name, source, ingArrayList, garnish, style, served, special, tasting);
+
+        addedToList.add(ct);
+        // Cocktail addedCT = new Cocktail();
+
+
     }
 
     @FXML
     private void addIngredientOnClick() {
-        String ingredient = (String)ingredientPickerChoiceBox.getValue();
+        String ingredientName = (String)ingredientPickerChoiceBox.getValue();
         String amount = ingredientAmountTextField.getText();
+        String unit = (String) unitChoiceBox.getValue();
+        Ingredient masterIng = ingredientMaster.getIngredient(ingredientName);
+        if(masterIng == null) {
+            System.out.println("Invalid ingredient or list");
+        }
+
         double damount;
         try {
             damount = Double.parseDouble(amount); 
@@ -107,10 +214,18 @@ public class GUIController {
             System.out.println("Failed to add ingredient");
             return;
         }
-        if(!ingredient.equals(""))
-            System.out.println("Added " + amount + " of " + ingredient);
-        else 
+        if(!ingredientName.equals("")) { // TODO Fix this to check for null
+            Ingredient addedIng = new Ingredient(ingredientName, masterIng.getType(), damount, unit);
+
+            ingredientTableView.getItems().add(addedIng);
+
+            
+            ingredientAmountTextField.clear();
+            System.out.println("Added " + amount + " " + unit + " of " + ingredientName);
+        }
+        else {
             System.out.println("Failed to add ingredient");
+        }
     }
 
 
@@ -118,6 +233,10 @@ public class GUIController {
     private void initialize(){
 
         System.out.println("Initializing GUI Controller");
+        cTableName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        cTableType.setCellValueFactory(new PropertyValueFactory<>("type"));
+        cTableAmount.setCellValueFactory(new PropertyValueFactory<>("amount"));
+        cTableUnit.setCellValueFactory(new PropertyValueFactory<>("unit"));
     }
 
 }

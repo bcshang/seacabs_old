@@ -22,10 +22,12 @@ public class Seacabs{
 
 
     ArrayList<SeaList> masterCocktailLists = new ArrayList<SeaList>();
+    ArrayList<SeaList> personalCocktailLists = new ArrayList<SeaList>();
     ArrayList<SeaList> masterIngredientList = new ArrayList<SeaList>();
     String folder;
     ArrayList<String> servedList;
     ArrayList<String> styleList;
+    ArrayList<String> unitList;
 
     public Seacabs(String [] args) {
         System.out.println( "Seacabs Created!" );
@@ -37,7 +39,12 @@ public class Seacabs{
         importData();
     }
 
-
+    ArrayList<SeaList> getMasterCocktailLists() {
+        return masterCocktailLists;
+    }
+    ArrayList<SeaList> getPersonalCocktailLists() {
+        return personalCocktailLists;
+    }
 
 
     public ArrayList<String> getServedList() {
@@ -46,6 +53,10 @@ public class Seacabs{
 
     public ArrayList<String> getStyleList() {
         return styleList;
+    }
+
+    public ArrayList<String> getUnitList() {
+        return unitList;
     }
 
     public ArrayList<String> getCocktailFileList() {
@@ -57,13 +68,17 @@ public class Seacabs{
     }
 
     // TODO allow for more master lists
-    public ArrayList<String> getIngredientList() {
+    public ArrayList<String> getIngredientListString() {
         ArrayList<Ingredient> ingList = (ArrayList<Ingredient>)masterIngredientList.get(0).getList();
         ArrayList<String> ingString = new ArrayList<String>();
         for(int ii=0; ii<ingList.size(); ii++) {
             ingString.add(ingList.get(ii).getName());
         }
         return ingString;
+    }
+
+    public SeaList getIngredientList() {
+        return masterIngredientList.get(0);
     }
 
 
@@ -119,7 +134,7 @@ public class Seacabs{
         // Try parsing cocktail options
         servedList = Parse.parseServed(folder + "options.xml");
         styleList = Parse.parseStyle(folder + "options.xml");
-
+        unitList = Parse.parseUnit(folder + "options.xml");
 
         // System.out.println();
         // for(int ii=0; ii<cocktailMasterList.size(); ii++) {

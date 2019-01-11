@@ -21,6 +21,7 @@ public class Cocktail {
     String style;
     String served;
     String special;
+    String tastingNotes;
 
     public Cocktail(String name, String source,
                     ArrayList<Ingredient> ingredients, String garnishes,
@@ -32,6 +33,19 @@ public class Cocktail {
         this.style = style;
         this.served = served;
         this.special = special;
+    }
+    
+    public Cocktail(String name, String source,
+                    ArrayList<Ingredient> ingredients, String garnishes,
+                    String style, String served, String special, String tastingNotes) {
+        this.name = name;
+        this.source = source;
+        this.ingredients = ingredients;
+        this.garnishes = garnishes;
+        this.style = style;
+        this.served = served;
+        this.special = special;
+        this.tastingNotes = tastingNotes;
     }
 
 

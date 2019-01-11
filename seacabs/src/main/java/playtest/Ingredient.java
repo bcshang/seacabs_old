@@ -65,6 +65,10 @@ public class Ingredient {
         return amount;
     }
 
+    public String getUnit() {
+        return unit;
+    }
+
     @Override
     public String toString() {
         return "\tType: " + type +

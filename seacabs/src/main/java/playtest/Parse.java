@@ -174,6 +174,43 @@ public class Parse {
         return styleList;
     }
 
+    // Parses Cocktail Options
+    public static ArrayList<String> parseUnit(String fileName) {
+        ArrayList<String> unitList = new ArrayList<String>();
+        System.out.println("Parsing units from " + fileName);
+        try {
+            File inputFile = new File(fileName);
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            NodeList nList = doc.getElementsByTagName("option");
+
+            // Search for correct type option
+            for(int ii = 0; ii < nList.getLength(); ii++) {
+                Node nNode = nList.item(ii);
+
+                if(nNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element eElement = (Element) nNode;
+                    String type = eElement.getAttribute("type");
+                    if(type.equals("unit")) {
+                        System.out.println("Found Unit");
+                        NodeList styList = eElement.getElementsByTagName("unit");
+                        for(int jj = 0; jj < styList.getLength(); jj++) {
+                            String styleOption = styList.item(jj).getTextContent().trim();
+                            unitList.add(styleOption);
+                        }
+                        break;
+                    }
+                }
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return unitList;
+    }
+
 
     public static ArrayList<Ingredient> parseMasterIngredients(String fileName) {
         ArrayList<Ingredient> ingList = new ArrayList<Ingredient>();

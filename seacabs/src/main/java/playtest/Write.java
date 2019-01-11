@@ -20,11 +20,15 @@ public class Write {
     public static void write(SeaList seaList) {
         String folder = SeaList.getFolder();
         try {
-            // Rename old file to _bak
-            File fileOld = new File(SeaList.getFolder() + seaList.getFile());
-            File fileRename = new File(SeaList.getFolder() + seaList.getFile() + "_bak");
-            if(!fileOld.renameTo(fileRename)) {
-                System.out.println("Failed to rename file");
+
+            if(!seaList.getWritten()) {
+                // Rename old file to _bak
+                File fileOld = new File(SeaList.getFolder() + seaList.getFile());
+                File fileRename = new File(SeaList.getFolder() + seaList.getFile() + "_bak");
+                if(!fileOld.renameTo(fileRename)) {
+                    System.out.println("Failed to rename file");
+                }
+                seaList.setWritten();
             }
 
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();

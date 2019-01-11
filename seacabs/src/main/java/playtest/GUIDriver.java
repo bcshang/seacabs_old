@@ -27,14 +27,10 @@ public class GUIDriver extends Application {
             root = loader.load();
             guiControl = (GUIController) loader.getController();
 
+            guiControl.setSeac(seac);
+
             stage.setTitle("Welcome to Seacabs!");
             stage.setScene(new Scene(root));
-
-
-            guiControl.updateServedList(seac.getServedList());
-            guiControl.updateStyleList(seac.getStyleList());
-            guiControl.updateCFileList(seac.getCocktailFileList());
-            guiControl.updateIngredientPickerChoiceBox(seac.getIngredientList());
 
 
             stage.show();

@@ -24,19 +24,20 @@
             <TextArea id="cTasNotTextArea" fx:id="cTasNotTextArea" layoutX="25.0" layoutY="338.0" prefHeight="200.0" prefWidth="200.0" promptText="Tasting Notes" />
             <TableView id="ingredientTableView" fx:id="ingredientTableView" layoutX="227.0" layoutY="19.0" prefHeight="345.0" prefWidth="625.0">
                <columns>
-                  <TableColumn id="cTableName" prefWidth="186.0" text="Name" />
-                  <TableColumn id="cTableType" prefWidth="144.0" text="Type" />
-                  <TableColumn id="cTableAmount" prefWidth="107.0" text="Amount" />
-                  <TableColumn id="cTableUnit" prefWidth="99.0" text="Unit" />
-                  <TableColumn id="cTableDelete" prefWidth="88.0" text="Delete" />
+                  <TableColumn id="cTableName" fx:id="cTableName" prefWidth="186.0" text="Name" />
+                  <TableColumn id="cTableType" fx:id="cTableType" prefWidth="144.0" text="Type" />
+                  <TableColumn id="cTableAmount" fx:id="cTableAmount" prefWidth="107.0" text="Amount" />
+                  <TableColumn id="cTableUnit" fx:id="cTableUnit" prefWidth="99.0" text="Unit" />
                </columns>
             </TableView>
             <AnchorPane layoutX="257.0" layoutY="376.0" prefHeight="124.0" prefWidth="584.0">
                <children>
-                  <Button id="addIngredientButton" fx:id="addIngredientButton" layoutX="137.0" layoutY="84.0" mnemonicParsing="false" onAction="#addIngredientOnClick" text="Add Ingredient" />
+                  <Button id="addIngredientButton" fx:id="addIngredientButton" layoutX="136.0" layoutY="84.0" mnemonicParsing="false" onAction="#addIngredientOnClick" text="Add Ingredient" />
                   <ChoiceBox id="ingredientPickerChoiceBox" fx:id="ingredientPickerChoiceBox" layoutY="14.0" prefHeight="26.0" prefWidth="387.0" />
-                  <TextField id="ingredientAmountTextField" fx:id="ingredientAmountTextField" layoutX="158.0" layoutY="49.0" prefHeight="26.0" prefWidth="72.0" promptText="Amount" />
-                  <Button layoutX="437.0" layoutY="49.0" mnemonicParsing="false" text="Create Ingredient" />
+                  <TextField id="ingredientAmountTextField" fx:id="ingredientAmountTextField" layoutX="101.0" layoutY="49.0" prefHeight="26.0" prefWidth="72.0" promptText="Amount" />
+                  <Button layoutX="437.0" layoutY="84.0" mnemonicParsing="false" text="Create Ingredient" />
+                  <ChoiceBox id="unitChoiceBox" fx:id="unitChoiceBox" layoutX="216.0" layoutY="49.0" prefHeight="26.0" prefWidth="72.0" />
+                  <Button id="removeIngredientButton" fx:id="removeIngredientButton" layoutX="446.0" layoutY="14.0" mnemonicParsing="false" onAction="#removeIngredientOnClick" text="Remove Ingredient" />
                </children>
             </AnchorPane>
       </children>

@@ -12,4 +12,11 @@
         <style>shaken, double strain</style>
         <style>stirred</style>
     </option>
+    <option type="unit">
+        <unit>oz</unit>
+        <unit>ml</unit>
+        <unit>cl</unit>
+        <unit>leaves</unit>
+        <unit>pieces</unit>
+    </option>
 </options>

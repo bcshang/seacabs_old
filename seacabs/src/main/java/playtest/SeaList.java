@@ -11,11 +11,13 @@ public class SeaList {
     Common.XMLType type;
     String fileName;
     static String folderName;
+    boolean written;
 
     public SeaList(ArrayList<?> list, Common.XMLType type, String fileName) {
         this.list = list;
         this.type = type;
         this.fileName = fileName;
+        written = false;
     }
 
 
@@ -25,7 +27,12 @@ public class SeaList {
 
 
     public void add(Object obj) {
-        
+        if(type == Common.XMLType.MASTER_INGREDIENTS && obj instanceof Ingredient) {
+            ((ArrayList<Ingredient>)list).add((Ingredient)obj);
+        } else if((type == Common.XMLType.MASTER_RECIPES || type == Common.XMLType.PERSONAL_RECIPES) && obj instanceof Cocktail) {
+            ((ArrayList<Cocktail>)list).add((Cocktail)obj);
+        } 
+        Write.write(this);
     }
 
 
@@ -43,5 +50,36 @@ public class SeaList {
 
     public static String getFolder() {
         return folderName;
+    }
+
+    public boolean getWritten() {
+        return written;
+    }
+
+    public void setWritten() {
+        written = true;
+    }
+
+    /**
+     * Returns the ingredient associated with a name
+     * Assumes names are unique
+     * 
+     * @param  name name of ingredient searched for
+     * @return      null if invalid list of ingredient not found
+     *              Ingredient object if ingredient is found
+     */
+    public Ingredient getIngredient(String name) {
+        if(type != Common.XMLType.MASTER_INGREDIENTS) {
+            return null;
+        }
+
+        ArrayList<Ingredient> ingList = (ArrayList<Ingredient>) list;
+        for(int ii=0; ii<ingList.size(); ii++) {
+            if(ingList.get(ii).getName().equalsIgnoreCase(name)) {
+                return ingList.get(ii);
+            }
+        }
+
+        return null;
     }
 }
