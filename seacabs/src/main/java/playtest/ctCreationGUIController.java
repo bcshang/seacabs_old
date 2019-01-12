@@ -11,11 +11,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import javafx.application.Application;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GUIController {
+public class ctCreationGUIController {
 
     @FXML 
     private TextField cnameTextField;
@@ -68,6 +69,8 @@ public class GUIController {
     @FXML
     private TextField ingredientAmountTextField;
 
+    @FXML
+    private Button createIngButton;
 
     Seacabs seac;
     SeaList ingredientMaster;
@@ -157,9 +160,15 @@ public class GUIController {
         String garnish = cGarnishTextField.getText();
         String special = cSpecialTextField.getText();
         String tasting = cSpecialTextField.getText();
-        String served = servedChoiceBox.getValue().toString();
-        String style = styleChoiceBox.getValue().toString();
-        String file = fileChoiceBox.getValue().toString();
+        String served, style, file;
+        try {
+            served = servedChoiceBox.getValue().toString();
+            style = styleChoiceBox.getValue().toString();
+            file = fileChoiceBox.getValue().toString();
+        } catch (Exception e) {
+            System.out.println("Error please select proper options from choice boxes");
+            return;
+        }
 
         // Find what file to add to
         SeaList addedToList = null;
@@ -227,6 +236,22 @@ public class GUIController {
             System.out.println("Failed to add ingredient");
         }
     }
+
+
+    @FXML
+    private void createIngButtonOnClick() {
+        // System.out.println("Creating Ingredient GUI Launching");
+        // Application.launch(ingCreationGUIDriver.class);
+        // new Thread() {
+        //     @Override
+        //     public void run() {
+        //         javafx.application.Application.launch(ingCreationGUIDriver.class);
+        //     }
+        // }.start();
+        // ingCreationGUIDriver ingGUI = ingCreationGUIDriver.waitForStart();
+        // ingGUI.setSeac(seac);
+    }
+
 
 
     @FXML

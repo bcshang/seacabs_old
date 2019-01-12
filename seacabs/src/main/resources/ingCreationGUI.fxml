@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button id="ingCreateButton" fx:id="ingCreateButton" layoutX="293.0" layoutY="398.0" mnemonicParsing="false" text="Create Ingredient" />
+      <ComboBox id="ingTypeChoiceBox" fx:id="ingTypeChoiceBox" layoutX="284.0" layoutY="117.0" prefWidth="150.0" promptText="Type" />
+      <TextField fx:id="ingNameTextField" layoutX="274.0" layoutY="56.0" promptText="Name of Ingredient" />
+      <TextArea id="ingDescTextArea" fx:id="ingDescTextArea" layoutX="154.0" layoutY="172.0" prefHeight="99.0" prefWidth="409.0" promptText="Description of Ingredient" />
+      <TextArea id="ingRevTextArea" fx:id="ingRevTextArea" layoutX="154.0" layoutY="283.0" prefHeight="86.0" prefWidth="409.0" promptText="Review of Ingredient" />
+   </children>
+   <padding>
+      <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+   </padding>
+</AnchorPane>

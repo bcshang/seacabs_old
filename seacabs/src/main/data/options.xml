@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <options>
     <option type="served">
-        <served>up</served>
         <served>on the rocks</served>
+        <served>up</served>
     </option>
     <option type="style">
         <style>blended</style>
@@ -13,10 +13,19 @@
         <style>stirred</style>
     </option>
     <option type="unit">
-        <unit>oz</unit>
-        <unit>ml</unit>
+        <unit>bunches</unit>
         <unit>cl</unit>
         <unit>leaves</unit>
+        <unit>ml</unit>
+        <unit>oz</unit>
         <unit>pieces</unit>
+    </option>
+    <option type="ingtype">
+        <ingtype>fruit</ingtype>
+        <ingtype>liqueur</ingtype>
+        <ingtype>plant</ingtype>
+        <ingtype>sour</ingtype>
+        <ingtype>spirit</ingtype>
+        <ingtype>sweet</ingtype>
     </option>
 </options>

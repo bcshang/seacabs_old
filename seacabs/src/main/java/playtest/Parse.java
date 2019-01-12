@@ -211,6 +211,43 @@ public class Parse {
         return unitList;
     }
 
+    // Parses Cocktail Options
+    public static ArrayList<String> parseIngType(String fileName) {
+        ArrayList<String> ingTypeList = new ArrayList<String>();
+        System.out.println("Parsing ingredient types from " + fileName);
+        try {
+            File inputFile = new File(fileName);
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            NodeList nList = doc.getElementsByTagName("option");
+
+            // Search for correct type option
+            for(int ii = 0; ii < nList.getLength(); ii++) {
+                Node nNode = nList.item(ii);
+
+                if(nNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element eElement = (Element) nNode;
+                    String type = eElement.getAttribute("type");
+                    if(type.equals("ingtype")) {
+                        System.out.println("ingtype");
+                        NodeList styList = eElement.getElementsByTagName("ingtype");
+                        for(int jj = 0; jj < styList.getLength(); jj++) {
+                            String typeOption = styList.item(jj).getTextContent().trim();
+                            ingTypeList.add(typeOption);
+                        }
+                        break;
+                    }
+                }
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ingTypeList;
+    }
+
 
     public static ArrayList<Ingredient> parseMasterIngredients(String fileName) {
         ArrayList<Ingredient> ingList = new ArrayList<Ingredient>();

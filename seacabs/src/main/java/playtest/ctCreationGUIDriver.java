@@ -12,9 +12,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class GUIDriver extends Application {
+public class ctCreationGUIDriver extends Application {
 
-    static GUIController guiControl;
+    static ctCreationGUIController guiControl;
     static Seacabs seac;
 
 
@@ -25,7 +25,7 @@ public class GUIDriver extends Application {
             FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("cocktailCreationGUI.fxml"));
 
             root = loader.load();
-            guiControl = (GUIController) loader.getController();
+            guiControl = (ctCreationGUIController) loader.getController();
 
             guiControl.setSeac(seac);
 

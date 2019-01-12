@@ -28,6 +28,7 @@ public class Seacabs{
     ArrayList<String> servedList;
     ArrayList<String> styleList;
     ArrayList<String> unitList;
+    ArrayList<String> typeList;
 
     public Seacabs(String [] args) {
         System.out.println( "Seacabs Created!" );
@@ -57,6 +58,10 @@ public class Seacabs{
 
     public ArrayList<String> getUnitList() {
         return unitList;
+    }
+    
+    public ArrayList<String> getTypeList() {
+        return typeList;
     }
 
     public ArrayList<String> getCocktailFileList() {
@@ -135,10 +140,11 @@ public class Seacabs{
         servedList = Parse.parseServed(folder + "options.xml");
         styleList = Parse.parseStyle(folder + "options.xml");
         unitList = Parse.parseUnit(folder + "options.xml");
+        typeList = Parse.parseIngType(folder + "options.xml");
 
         // System.out.println();
-        // for(int ii=0; ii<cocktailMasterList.size(); ii++) {
-        //     System.out.println(cocktailMasterList.get(ii));
+        // for(int ii=0; ii<masterCocktailLists.get(0).getList().size(); ii++) {
+        //     System.out.println(masterCocktailLists.get(0).getList().get(ii));
         // }
 
 

@@ -87,6 +87,7 @@ public class Ingredient {
         Element xingredient = doc.createElement("ingredient");
         Attr xtype = doc.createAttribute("type");
         xtype.setValue(type);
+        xingredient.setAttributeNode(xtype);
 
         Element xname = doc.createElement("name");
         xname.appendChild(doc.createTextNode(this.name));
