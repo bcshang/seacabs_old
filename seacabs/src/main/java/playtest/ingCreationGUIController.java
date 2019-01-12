@@ -24,21 +24,68 @@ public class ingCreationGUIController {
     private TextArea ingDescTextArea;
 
     @FXML
-    private TextArea ingRevTextArea;
-
-    @FXML
     private Button ingCreateButton;
 
+    @FXML
+    private ChoiceBox ingFileChoiceBox;
+
+
     Seacabs seac;
-    SeaList ingredientMaster;
 
     public void setSeac(Seacabs seac) {
         this.seac = seac;
         updateTypeList(seac.getTypeList());
+        setIngredientFileArray(seac.getMasterIngredientList());
+        setIngredientFileArray(seac.getMasterBottlesList());
     }
+
+    public void setIngredientFileArray(ArrayList<SeaList> ingredients) {
+        for(int ii=0; ii<ingredients.size(); ii++) {
+            ingFileChoiceBox.getItems().add(ingredients.get(ii).getFile());
+        }
+    }
+
 
     @FXML
     public void ingCreateButtonOnClick() {
+        String name = ingNameTextField.getText();
+        String type;
+        String file;
+        try {
+             type = ingTypeChoiceBox.getValue().toString();
+             file = ingFileChoiceBox.getValue().toString();
+        } catch(Exception e) {
+            System.out.println("Please select an appropriate type and/or file");
+            return;
+        }
+        String description = ingDescTextArea.getText();
+        Ingredient createdIng = new Ingredient(name, type, description);
+
+        SeaList addedToList = null;
+        ArrayList<SeaList> tempList = seac.getMasterIngredientList();
+        for(int ii=0; ii < tempList.size(); ii++) {
+            if(tempList.get(ii).getFile().equalsIgnoreCase(file)) {
+                addedToList = tempList.get(ii);
+                break;
+            }
+        }
+        if(addedToList == null) {
+            tempList = seac.getMasterBottlesList();
+            for(int ii=0; ii < tempList.size(); ii++) {
+                if(tempList.get(ii).getFile().equalsIgnoreCase(file)) {
+                    addedToList = tempList.get(ii);
+                    break;
+                }
+            }
+        }
+        
+        if(addedToList == null) {
+            System.out.println("Error finding list to add to");
+            return;
+        }
+
+        addedToList.add(createdIng);
+
         System.out.println("Created Ingredient");
     }
 

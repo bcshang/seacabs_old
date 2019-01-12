@@ -7,13 +7,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="playtest.ingCreationGUIController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playtest.ingCreationGUIController">
    <children>
-      <Button id="ingCreateButton" fx:id="ingCreateButton" layoutX="293.0" layoutY="398.0" mnemonicParsing="false" text="Create Ingredient" />
+      <Button id="ingCreateButton" fx:id="ingCreateButton" layoutX="293.0" layoutY="398.0" mnemonicParsing="false" onAction="#ingCreateButtonOnClick" text="Create Ingredient" />
       <TextField fx:id="ingNameTextField" layoutX="274.0" layoutY="56.0" promptText="Name of Ingredient" />
       <TextArea id="ingDescTextArea" fx:id="ingDescTextArea" layoutX="154.0" layoutY="172.0" prefHeight="99.0" prefWidth="409.0" promptText="Description of Ingredient" />
-      <TextArea id="ingRevTextArea" fx:id="ingRevTextArea" layoutX="154.0" layoutY="283.0" prefHeight="86.0" prefWidth="409.0" promptText="Review of Ingredient" />
       <ChoiceBox id="ingTypeChoiceBox" fx:id="ingTypeChoiceBox" layoutX="284.0" layoutY="113.0" prefWidth="150.0" />
+      <ChoiceBox id="ingFileChoiceBox" fx:id="ingFileChoiceBox" layoutX="285.0" layoutY="330.0" prefWidth="150.0" />
    </children>
    <padding>
       <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />

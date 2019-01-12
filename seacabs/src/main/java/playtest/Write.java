@@ -51,7 +51,7 @@ public class Write {
                         break;
                     case PERSONAL_RECIPES:
                         break;
-                    case MASTER_LIQUOR:
+                    case MASTER_BOTTLES:
                         break;
                     case MASTER_INGREDIENTS:
                         break;

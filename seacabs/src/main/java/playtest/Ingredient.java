@@ -84,24 +84,41 @@ public class Ingredient {
      * @return     Ingredient XML object
      */
     public Element toXML(Document doc) {
-        Element xingredient = doc.createElement("ingredient");
-        Attr xtype = doc.createAttribute("type");
-        xtype.setValue(type);
-        xingredient.setAttributeNode(xtype);
+        
+        if(ingt == ingType.FULL) {
+            Element xingredient = doc.createElement("ingredient");
+            Attr xtype = doc.createAttribute("type");
+            xtype.setValue(type);
+            xingredient.setAttributeNode(xtype);
 
-        Element xname = doc.createElement("name");
-        xname.appendChild(doc.createTextNode(this.name));
-        xingredient.appendChild(xname);
+            Element xname = doc.createElement("name");
+            xname.appendChild(doc.createTextNode(this.name));
+            xingredient.appendChild(xname);
 
-        Element xamount = doc.createElement("amount");
-        xamount.appendChild(doc.createTextNode(Double.toString(this.amount)));
-        xingredient.appendChild(xamount);
+            Element xamount = doc.createElement("amount");
+            xamount.appendChild(doc.createTextNode(Double.toString(this.amount)));
+            xingredient.appendChild(xamount);
 
-        Element xunit = doc.createElement("unit");
-        xunit.appendChild(doc.createTextNode(this.unit));
-        xingredient.appendChild(xunit);
+            Element xunit = doc.createElement("unit");
+            xunit.appendChild(doc.createTextNode(this.unit));
+            xingredient.appendChild(xunit);
 
-        return xingredient; 
+            return xingredient; 
+        } else { // Assuming minimal
+            Element xingredient = doc.createElement("ingredient");
+            Attr xtype = doc.createAttribute("type");
+            xtype.setValue(type);
+            xingredient.setAttributeNode(xtype);
+
+            Element xname = doc.createElement("name");
+            xname.appendChild(doc.createTextNode(this.name));
+            xingredient.appendChild(xname);
+
+            Element xunit = doc.createElement("description");
+            xunit.appendChild(doc.createTextNode(this.description));
+            xingredient.appendChild(xunit);
+            return xingredient;
+        }
     }
 
 

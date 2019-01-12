@@ -24,6 +24,7 @@ public class Seacabs{
     ArrayList<SeaList> masterCocktailLists = new ArrayList<SeaList>();
     ArrayList<SeaList> personalCocktailLists = new ArrayList<SeaList>();
     ArrayList<SeaList> masterIngredientList = new ArrayList<SeaList>();
+    ArrayList<SeaList> masterBottlesList = new ArrayList<SeaList>();
     String folder;
     ArrayList<String> servedList;
     ArrayList<String> styleList;
@@ -72,18 +73,30 @@ public class Seacabs{
         return cFileList;
     }
 
-    // TODO allow for more master lists
+
     public ArrayList<String> getIngredientListString() {
-        ArrayList<Ingredient> ingList = (ArrayList<Ingredient>)masterIngredientList.get(0).getList();
         ArrayList<String> ingString = new ArrayList<String>();
-        for(int ii=0; ii<ingList.size(); ii++) {
-            ingString.add(ingList.get(ii).getName());
+        for(int jj=0; jj<masterIngredientList.size(); jj++) {
+            ArrayList<Ingredient> ingList = (ArrayList<Ingredient>)masterIngredientList.get(jj).getList();
+            for(int ii=0; ii<ingList.size(); ii++) {
+                ingString.add(ingList.get(ii).getName());
+            }
+        }
+        for(int jj=0; jj<masterBottlesList.size(); jj++) {
+            ArrayList<Ingredient> ingList = (ArrayList<Ingredient>)masterBottlesList.get(jj).getList();
+            for(int ii=0; ii<ingList.size(); ii++) {
+                ingString.add(ingList.get(ii).getName());
+            }
         }
         return ingString;
     }
 
-    public SeaList getIngredientList() {
-        return masterIngredientList.get(0);
+    public ArrayList<SeaList> getMasterIngredientList() {
+        return masterIngredientList;
+    }
+
+    public ArrayList<SeaList> getMasterBottlesList() {
+        return masterBottlesList;
     }
 
 
@@ -110,8 +123,8 @@ public class Seacabs{
                     case "PERSONAL_RECIPES":
                         type = Common.XMLType.PERSONAL_RECIPES;
                         break;
-                    case "MASTER_LIQUOR":
-                        type = Common.XMLType.MASTER_LIQUOR;
+                    case "MASTER_BOTTLES":
+                        type = Common.XMLType.MASTER_BOTTLES;
                         break;
                     case "MASTER_INGREDIENTS":
                         type = Common.XMLType.MASTER_INGREDIENTS;
