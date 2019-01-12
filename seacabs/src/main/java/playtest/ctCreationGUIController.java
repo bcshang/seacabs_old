@@ -11,7 +11,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import javafx.application.Application;
+// For launching another window
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.Parent;
+import javafx.stage.Stage;
+import java.io.IOException;
+
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -240,16 +247,25 @@ public class ctCreationGUIController {
 
     @FXML
     private void createIngButtonOnClick() {
-        // System.out.println("Creating Ingredient GUI Launching");
-        // Application.launch(ingCreationGUIDriver.class);
-        // new Thread() {
-        //     @Override
-        //     public void run() {
-        //         javafx.application.Application.launch(ingCreationGUIDriver.class);
-        //     }
-        // }.start();
-        // ingCreationGUIDriver ingGUI = ingCreationGUIDriver.waitForStart();
-        // ingGUI.setSeac(seac);
+        System.out.println("Creating Ingredient GUI Launching");
+
+        Parent root;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("ingCreationGUI.fxml"));
+            Stage stage = new Stage();
+            root = loader.load();
+            ingCreationGUIController guiControl = (ingCreationGUIController) loader.getController();
+            guiControl.setSeac(seac);
+
+            stage.setTitle("Ingredient Creation GUI");
+            stage.setScene(new Scene(root));
+
+
+            stage.show();
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

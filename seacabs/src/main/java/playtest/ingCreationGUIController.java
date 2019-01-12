@@ -37,6 +37,11 @@ public class ingCreationGUIController {
         updateTypeList(seac.getTypeList());
     }
 
+    @FXML
+    public void ingCreateButtonOnClick() {
+        System.out.println("Created Ingredient");
+    }
+
     public void updateTypeList(ArrayList<String> typeList) {
         ingTypeChoiceBox.setItems(FXCollections.observableArrayList(typeList));
     }
