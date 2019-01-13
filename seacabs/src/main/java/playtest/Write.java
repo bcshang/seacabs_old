@@ -37,23 +37,29 @@ public class Write {
             // root elements
             Document doc = docBuilder.newDocument();
 
-            Element rootElement = doc.createElement("recipes");
-            doc.appendChild(rootElement);
+            Element rootElement;
 
 
             // TODO Fix this for other types
             ArrayList<?> list = seaList.getList();
             switch(seaList.getType()) {
                     case MASTER_RECIPES:
+                        rootElement = doc.createElement("recipes");
+                        doc.appendChild(rootElement);
                         for(int ii=0; ii<list.size(); ii++) {
                             ((Cocktail)(list.get(ii))).toXML(doc, rootElement, seaList.getType());
-                        }                
+                        }          
                         break;
                     case PERSONAL_RECIPES:
                         break;
                     case MASTER_BOTTLES:
                         break;
                     case MASTER_INGREDIENTS:
+                        rootElement = doc.createElement("ingredients");
+                        doc.appendChild(rootElement);
+                        for(int ii=0; ii<list.size(); ii++) {
+                            ((Ingredient)(list.get(ii))).toXML(doc, rootElement, seaList.getType());
+                        }                
                         break;
                     default:
                         System.out.println("Failed to output, invalid type");

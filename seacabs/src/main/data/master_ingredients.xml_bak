@@ -16,8 +16,4 @@
         <name>lime juice</name>
         <description>juice of a lime</description>
     </ingredient>
-    <ingredient type="plant">
-        <name>mint</name>
-        <description>mint leaves</description>
-    </ingredient>
 </ingredients>

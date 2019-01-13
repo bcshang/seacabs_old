@@ -80,6 +80,7 @@ public class Ingredient {
     /**
      * Creates an XML element of an ingredient that is a child to the document
      * Does not make it a child of any element. That is done externally
+     * Typical usage is for adding ingredients to a cocktail element
      * @param  doc XML document object
      * @return     Ingredient XML object
      */
@@ -118,6 +119,38 @@ public class Ingredient {
             xunit.appendChild(doc.createTextNode(this.description));
             xingredient.appendChild(xunit);
             return xingredient;
+        }
+    }
+
+    public void toXML(Document doc, Element root, Common.XMLType type) { // TODO confusing type notation, fix
+        if(type == Common.XMLType.MASTER_INGREDIENTS) {
+            Element xingredient = doc.createElement("ingredient");
+            root.appendChild(xingredient);
+            Attr xtype = doc.createAttribute("type");
+            xtype.setValue(this.type);
+            xingredient.setAttributeNode(xtype);
+
+            Element xname = doc.createElement("name");
+            xname.appendChild(doc.createTextNode(this.name));
+            xingredient.appendChild(xname);
+
+            Element xunit = doc.createElement("description");
+            xunit.appendChild(doc.createTextNode(this.description));
+            xingredient.appendChild(xunit);        
+        } else { // assume MASTER_BOTTLES TODO figure out how this is gonna work
+            Element xingredient = doc.createElement("bottle");
+            root.appendChild(xingredient);
+            Attr xtype = doc.createAttribute("type");
+            xtype.setValue(this.type);
+            xingredient.setAttributeNode(xtype);
+
+            Element xname = doc.createElement("name");
+            xname.appendChild(doc.createTextNode(this.name));
+            xingredient.appendChild(xname);
+
+            Element xunit = doc.createElement("description");
+            xunit.appendChild(doc.createTextNode(this.description));
+            xingredient.appendChild(xunit); 
         }
     }
 
