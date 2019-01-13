@@ -13,26 +13,31 @@ import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 
 public class Parse {
+
+    /**
+     * 
+     */
     public static ArrayList<?> parseFile(String fileName, Common.XMLType type) {
         switch(type) {
             case MASTER_RECIPES:
                 return parseMasterRecipe(fileName);
-                // break;
             case PERSONAL_RECIPES:
                 return null;
-                // break; 
             case MASTER_BOTTLES:
-                return null;
-                // break; 
+                return null; 
             case MASTER_INGREDIENTS:
                 return parseMasterIngredients(fileName);
-                // break;
             default:
                 return null;
         }
     }
 
-
+    /**
+     * Helper function to get the text within an element
+     * @param  n   node we are pulling elements from
+     * @param  tag element tag we are searching for to pull the text out of
+     * @return     inner text
+     */
     public static String getInner(Element n, String tag) {
         return n.getElementsByTagName(tag).item(0).getTextContent().trim();
     }
@@ -47,11 +52,16 @@ public class Parse {
         ArrayList<Cocktail> cocktails = new ArrayList<Cocktail>();
         System.out.println("Parsing master recipes from " + fileName);
         try {
+            // Try to get the file
             File inputFile = new File(fileName);
+
+            // Create the document builder for the file
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
+
+            // Begin actual parsing
             NodeList nList = doc.getElementsByTagName("recipe");
             System.out.println("Found " + nList.getLength() + " recipe(s)");
             for(int ii = 0; ii < nList.getLength(); ii++) {
@@ -81,6 +91,7 @@ public class Parse {
                     String served = getInner(eElement, "served");
                     String special = getInner(eElement, "special");
                     
+                    // Create the cocktail and add it to the list
                     Cocktail ct = new Cocktail(name, source, ingredients, garnish, style, served, special);
 
                     cocktails.add(ct);
@@ -95,12 +106,45 @@ public class Parse {
 
 
 
+    public static ArrayList<Ingredient> parseMasterIngredients(String fileName) {
+        ArrayList<Ingredient> ingList = new ArrayList<Ingredient>();
+        System.out.println("Parsing master ingredients from " + fileName);
+        try {
+            File inputFile = new File(fileName);
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            NodeList nList = doc.getElementsByTagName("ingredient");
+            // System.out.println("Found " + nList.getLength() + " ingredients");
+            for(int ii = 0; ii < nList.getLength(); ii++) {
+                    Node nNode = nList.item(ii);
+                    Element eElement = (Element) nNode;
+                    String name = getInner(eElement, "name");
+                    String description = getInner(eElement, "description");
+                    String ingType = eElement.getAttribute("type");
+                    Ingredient ing = new Ingredient(name, ingType, description);
+                    ingList.add(ing);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        // System.out.println("Found " + ingList.size() + " ingredients");
+        return ingList;
+    }
 
 
 
+    //////////////////////////////////////////
+    // Section for parsing cocktail options //
+    //////////////////////////////////////////
 
-
-    // Parses Cocktail Options
+    /**
+     * Parses served cocktail option
+     * See previous function for more details as this is more or less copy pasted
+     * @param  fileName The complete filepath of the file to be parsed (probably options.xml)
+     * @return          Arraylist of served options
+     */
     public static ArrayList<String> parseServed(String fileName) {
         ArrayList<String> servedList = new ArrayList<String>();
         System.out.println("Parsing served from " + fileName);
@@ -137,7 +181,12 @@ public class Parse {
         return servedList;
     }
 
-    // Parses Cocktail Options
+    /**
+     * [parseStyle description]
+     * See previous function for more details as this is more or less copy pasted
+     * @param  fileName [description]
+     * @return          [description]
+     */
     public static ArrayList<String> parseStyle(String fileName) {
         ArrayList<String> styleList = new ArrayList<String>();
         System.out.println("Parsing served from " + fileName);
@@ -174,7 +223,12 @@ public class Parse {
         return styleList;
     }
 
-    // Parses Cocktail Options
+    /**
+     * 
+     * See previous function for more details as this is more or less copy pasted
+     * @param  fileName [description]
+     * @return          [description]
+     */
     public static ArrayList<String> parseUnit(String fileName) {
         ArrayList<String> unitList = new ArrayList<String>();
         System.out.println("Parsing units from " + fileName);
@@ -211,7 +265,12 @@ public class Parse {
         return unitList;
     }
 
-    // Parses Cocktail Options
+    /**
+     * 
+     * See previous function for more details as this is more or less copy pasted
+     * @param  fileName [description]
+     * @return          [description]
+     */
     public static ArrayList<String> parseIngType(String fileName) {
         ArrayList<String> ingTypeList = new ArrayList<String>();
         System.out.println("Parsing ingredient types from " + fileName);
@@ -249,32 +308,6 @@ public class Parse {
     }
 
 
-    public static ArrayList<Ingredient> parseMasterIngredients(String fileName) {
-        ArrayList<Ingredient> ingList = new ArrayList<Ingredient>();
-        System.out.println("Parsing master ingredients from " + fileName);
-        try {
-            File inputFile = new File(fileName);
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(inputFile);
-            doc.getDocumentElement().normalize();
-            NodeList nList = doc.getElementsByTagName("ingredient");
-            // System.out.println("Found " + nList.getLength() + " ingredients");
-            for(int ii = 0; ii < nList.getLength(); ii++) {
-                    Node nNode = nList.item(ii);
-                    Element eElement = (Element) nNode;
-                    String name = getInner(eElement, "name");
-                    String description = getInner(eElement, "description");
-                    String ingType = eElement.getAttribute("type");
-                    Ingredient ing = new Ingredient(name, ingType, description);
-                    ingList.add(ing);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        // System.out.println("Found " + ingList.size() + " ingredients");
-        return ingList;
-    }
 
 
 }

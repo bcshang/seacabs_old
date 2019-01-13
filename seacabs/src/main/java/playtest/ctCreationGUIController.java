@@ -1,3 +1,7 @@
+/**
+ * Controller for the cocktail creation GUI
+ */
+
 package playtest;
 
 import javafx.fxml.FXML;
@@ -11,7 +15,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-// For launching another window
+// For launching another window for ingredient creation
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.Parent;
@@ -81,7 +85,7 @@ public class ctCreationGUIController {
 
     Seacabs seac;
     ArrayList<SeaList> ingredientMaster;
-
+    int ingredientPickerSize = 0;
     public void setSeac(Seacabs seac) {
         this.seac = seac;
         updateServedList(seac.getServedList());
@@ -113,16 +117,25 @@ public class ctCreationGUIController {
     }
 
     public void updateIngredientPickerChoiceBox(ArrayList<String> ingList) {
+        ingredientPickerSize = ingList.size();
         ingredientPickerChoiceBox.setItems(FXCollections.observableArrayList(ingList));
     }
 
-
+    /**
+     * Function to update the dropdown menu of ingredients in case there has been some update in the ingredients list
+     */
     public void onClickUpdateIngredientList() {
-        // System.out.println("On click update");
-        ingredientPickerChoiceBox.setItems(FXCollections.observableArrayList(seac.getIngredientListString()));
+        ArrayList<String> ingListString = seac.getIngredientListString();
+        if(ingListString.size() != ingredientPickerSize) {
+            ingredientPickerChoiceBox.setItems(FXCollections.observableArrayList());
+            ingredientPickerSize = ingListString.size();
+        }
+        
     }
 
-
+    /**
+     * Helpful debug output
+     */
     public void printDebug() {
         System.out.println("Recipe Saved!");
         
@@ -148,6 +161,11 @@ public class ctCreationGUIController {
 
     }
 
+
+    /**
+     * Remove ingredient button
+     * Will remove the selected ingredients from the tableview
+     */
     @FXML
     private void removeIngredientOnClick() {
         ObservableList<Ingredient> ingredientSelected, allIngredients;
@@ -157,9 +175,14 @@ public class ctCreationGUIController {
         ingredientSelected.forEach(allIngredients::remove);
     }
 
+
+    /**
+     * Saves a recipe based on the information provided in the GUI
+     * Will add the file to the respective file/cocktail list
+     */
     @FXML
     private void saveRecipeOnClick() {
-        printDebug();
+        // Make an arraylist for the ingredients in the table
         List<Ingredient> ingList = ingredientTableView.getItems();
         ArrayList<Ingredient> ingArrayList;
         if (ingList instanceof ArrayList<?>) {
@@ -168,6 +191,7 @@ public class ctCreationGUIController {
             ingArrayList = new ArrayList<Ingredient>(ingList);
         }
 
+        // Grab all the info from the fields
         String name = cnameTextField.getText();
         String source = cSourceTextField.getText();
         String garnish = cGarnishTextField.getText();
@@ -183,7 +207,7 @@ public class ctCreationGUIController {
             return;
         }
 
-        // Find what file to add to
+        // Find what file to add to (Horribly inefficient)
         SeaList addedToList = null;
         ArrayList<SeaList> tempList = seac.getMasterCocktailLists();
         for(int ii=0; ii < tempList.size(); ii++) {
@@ -192,7 +216,7 @@ public class ctCreationGUIController {
                 break;
             }
         }
-        if(addedToList == null) {
+        if(addedToList == null) { // Didn't find it in the master list
             tempList = seac.getPersonalCocktailLists();
             for(int ii=0; ii < tempList.size(); ii++) {
                 if(tempList.get(ii).getFile().equalsIgnoreCase(file)) {
@@ -201,12 +225,12 @@ public class ctCreationGUIController {
                 }
             }
         }
-        
-        if(addedToList == null) {
+        if(addedToList == null) { // Couldn't find it at all (Shouldn't happen)
             System.out.println("Error finding list to add to");
             System.exit(0);
         }
 
+        // Create the cocktail
         Cocktail ct;
         if(addedToList.getType() == Common.XMLType.MASTER_RECIPES)
             ct = new Cocktail(name, source, ingArrayList, garnish, style, served, special);
@@ -214,11 +238,12 @@ public class ctCreationGUIController {
             ct = new Cocktail(name, source, ingArrayList, garnish, style, served, special, tasting);
 
         addedToList.add(ct);
-        // Cocktail addedCT = new Cocktail();
-
-
     }
 
+
+    /**
+     * Add an ingredient based on the ingredient information
+     */
     @FXML
     private void addIngredientOnClick() {
         String ingredientName = (String)ingredientPickerChoiceBox.getValue();
@@ -283,7 +308,6 @@ public class ctCreationGUIController {
 
     @FXML
     private void initialize(){
-
         System.out.println("Initializing GUI Controller");
         cTableName.setCellValueFactory(new PropertyValueFactory<>("name"));
         cTableType.setCellValueFactory(new PropertyValueFactory<>("type"));

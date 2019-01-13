@@ -1,3 +1,6 @@
+/**
+ * Writer class for my specific
+ */
 package playtest;
 
 import java.io.File;
@@ -20,7 +23,7 @@ public class Write {
     public static void write(SeaList seaList) {
         String folder = SeaList.getFolder();
         try {
-
+            // Do not create so many _bak files, only do it once
             if(!seaList.getWritten()) {
                 // Rename old file to _bak
                 File fileOld = new File(SeaList.getFolder() + seaList.getFile());
@@ -39,8 +42,6 @@ public class Write {
 
             Element rootElement;
 
-
-            // TODO Fix this for other types
             ArrayList<?> list = seaList.getList();
             switch(seaList.getType()) {
                     case MASTER_RECIPES:

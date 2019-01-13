@@ -1,8 +1,14 @@
+/**
+ * Main class for storing how a cocktail is defined both in the XML and internall of the program
+ */
+
+
 package playtest;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
+// For XML creation
 import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -24,6 +30,7 @@ public class Cocktail {
     String special;
     String tastingNotes;
 
+    // Constructor for master cocktail list that does not come with any tasting notes
     public Cocktail(String name, String source,
                     ArrayList<Ingredient> ingredients, String garnishes,
                     String style, String served, String special) {
@@ -37,6 +44,7 @@ public class Cocktail {
         this.special = special;
     }
     
+    // Constructor for personal cocktail entries that come with tasting notes and specific bottles
     public Cocktail(String name, String source,
                     ArrayList<Ingredient> ingredients, String garnishes,
                     String style, String served, String special, String tastingNotes) {
@@ -51,7 +59,7 @@ public class Cocktail {
         this.tastingNotes = tastingNotes;
     }
 
-
+    // Getters
     public ArrayList<Ingredient> getIngredients() {
         return ingredients;
     }
@@ -61,6 +69,7 @@ public class Cocktail {
     }
 
 
+    // Easy printing
     @Override
     public String toString() {
         String ret = "";
@@ -75,17 +84,24 @@ public class Cocktail {
         ret += "Style: " + style + "\n";
         ret += "Served: " + served + "\n";
         ret += "Special Notes: " + special + "\n";
+        ret += "Tasting Notes: " + tastingNotes + "\n";
 
         return ret;
     }
 
+    /**
+     * Easy transfer to XML document format for cocktail class element
+     * @param doc  document to construct the element in
+     * @param root root element to add to
+     * @param type type of cocktail (personal or master)
+     */
     public void toXML(Document doc, Element root, Common.XMLType type) {
 
         // Wrapper element
         Element xcocktail = doc.createElement("recipe");
         root.appendChild(xcocktail);
         
-        // Add elements
+        // Add inner elements, most of this looks pretty much copy paste
         Element xname = doc.createElement("name");
         xname.appendChild(doc.createTextNode(this.name));
         xcocktail.appendChild(xname);
@@ -113,9 +129,21 @@ public class Cocktail {
         Element xspecial = doc.createElement("special");
         xspecial.appendChild(doc.createTextNode(this.special));
         xcocktail.appendChild(xspecial);        
+
+        if(type == Common.XMLType.PERSONAL_RECIPES) {        
+            Element xtasting = doc.createElement("tasting");
+            xtasting.appendChild(doc.createTextNode(this.tastingNotes));
+            xcocktail.appendChild(xtasting);        
+        }
     } 
     
 
+    /**
+     * Finds the first spirit listed in the ingredient list
+     * For use while sorting
+     * @param  ct Cocktail which we are looking for the spirit of 
+     * @return    String of what type the spirit in the drink is or blank
+     */
     public String findSpirit(Cocktail ct){
         ArrayList<Ingredient> list = ct.getIngredients();
         for(int ii=0; ii<list.size(); ii++) {
@@ -128,6 +156,11 @@ public class Cocktail {
     }
 
 
+    /**
+     * Compare method for sorting
+     * @param  other Cocktail being compared to
+     * @return       compareTo int
+     */
     public int compareTo(Cocktail other) { 
         String thisSpirit = findSpirit(this);
         String otherSpirit = findSpirit(other);

@@ -1,8 +1,8 @@
-package playtest;
-
 /**
- * Main functions for cocktail App
+ * Main wrapper class for cocktail app
  */
+
+package playtest;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -21,33 +21,46 @@ public class Seacabs{
     }
 
 
+    // All of the file lists, I use arraylist of the list to ensure we can add additional personal files if needed
+    // For example if multiple people use this
     ArrayList<SeaList> masterCocktailLists = new ArrayList<SeaList>();
     ArrayList<SeaList> personalCocktailLists = new ArrayList<SeaList>();
     ArrayList<SeaList> masterIngredientList = new ArrayList<SeaList>();
     ArrayList<SeaList> masterBottlesList = new ArrayList<SeaList>();
+
     String folder;
+    
+    // Cocktail options
     ArrayList<String> servedList;
     ArrayList<String> styleList;
     ArrayList<String> unitList;
     ArrayList<String> typeList;
 
+    /**
+     * Class Constructor
+     * Initializes the cocktail app basically
+     * @param  args arguments passed from command line
+     */
     public Seacabs(String [] args) {
         System.out.println( "Seacabs Created!" );
         if(args.length != 1) {
+            System.out.println("File Path incorrectly specified");
             printHelp();
-        } 
-
-        folder = args[0];
+            System.out.println("Assuming current folder");
+            folder = System.getProperty("user.dir");
+        } else {
+            folder = args[0];
+        }
         importData();
     }
 
+    // Getters
     ArrayList<SeaList> getMasterCocktailLists() {
         return masterCocktailLists;
     }
     ArrayList<SeaList> getPersonalCocktailLists() {
         return personalCocktailLists;
     }
-
 
     public ArrayList<String> getServedList() {
         return servedList;
@@ -65,15 +78,28 @@ public class Seacabs{
         return typeList;
     }
 
+    public ArrayList<SeaList> getMasterIngredientList() {
+        return masterIngredientList;
+    }
+
+    public ArrayList<SeaList> getMasterBottlesList() {
+        return masterBottlesList;
+    }
+
+
+    // Returns all files which were parsed to find cocktail recipes
     public ArrayList<String> getCocktailFileList() {
         ArrayList<String> cFileList = new ArrayList<String>();
         for(int ii=0; ii<masterCocktailLists.size(); ii++) {
             cFileList.add(masterCocktailLists.get(ii).getFile());
         }
+        for(int ii=0; ii<personalCocktailLists.size(); ii++) {
+            cFileList.add(personalCocktailLists.get(ii).getFile());
+        }
         return cFileList;
     }
 
-
+    // Parses both master ingredients and bottles for the cocktail app and returns the names of all ingredients
     public ArrayList<String> getIngredientListString() {
         ArrayList<String> ingString = new ArrayList<String>();
         for(int jj=0; jj<masterIngredientList.size(); jj++) {
@@ -91,20 +117,11 @@ public class Seacabs{
         return ingString;
     }
 
-    public ArrayList<SeaList> getMasterIngredientList() {
-        return masterIngredientList;
-    }
-
-    public ArrayList<SeaList> getMasterBottlesList() {
-        return masterBottlesList;
-    }
-
 
     public void importData()
     {
 
         SeaList.folderName = folder;
-        // TODO fix to work with & without the folder path thing
         // TODO make it so I don't have to initialize?
 
         BufferedReader reader;
@@ -159,9 +176,5 @@ public class Seacabs{
         // for(int ii=0; ii<masterCocktailLists.get(0).getList().size(); ii++) {
         //     System.out.println(masterCocktailLists.get(0).getList().get(ii));
         // }
-
-
-        // Start the GUI
-
     }
 }

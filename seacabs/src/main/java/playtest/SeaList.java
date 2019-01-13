@@ -1,17 +1,20 @@
-package playtest;
-
 /**
+ * Generic list class for me to use to keep track of various things
  * I assume all files are in the same folder
  */
+
+package playtest;
+
 
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class SeaList {
-    ArrayList<?> list;
+    static String folderName;
+
+    ArrayList<?> list; // Unknown list type but we expect a finite type
     Common.XMLType type;
     String fileName;
-    static String folderName;
     boolean written;
 
     public SeaList(ArrayList<?> list, Common.XMLType type, String fileName) {
@@ -21,7 +24,9 @@ public class SeaList {
         written = false;
     }
 
-
+    /**
+     * Sort the list
+     */
     public void sortList() {
         if(type == Common.XMLType.MASTER_INGREDIENTS || type == Common.XMLType.MASTER_BOTTLES) {
             Collections.sort((ArrayList<Ingredient>)list, (o1, o2) -> o1.compareTo(o2));
@@ -30,7 +35,10 @@ public class SeaList {
         }
     }
 
-
+    /**
+     * Add an object to the list
+     * @param obj Object to add
+     */
     public void add(Object obj) {
         if(type == Common.XMLType.MASTER_INGREDIENTS && obj instanceof Ingredient) {
             ((ArrayList<Ingredient>)list).add((Ingredient)obj);
@@ -41,7 +49,7 @@ public class SeaList {
         Write.write(this);
     }
 
-
+    // Getters
     public ArrayList<?> getList() {
         return list;
     }
@@ -62,6 +70,7 @@ public class SeaList {
         return written;
     }
 
+    // Setters
     public void setWritten() {
         written = true;
     }
@@ -69,7 +78,6 @@ public class SeaList {
     /**
      * Returns the ingredient associated with a name
      * Assumes names are unique
-     * 
      * @param  name name of ingredient searched for
      * @return      null if invalid list of ingredient not found
      *              Ingredient object if ingredient is found
