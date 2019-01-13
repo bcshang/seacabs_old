@@ -1,6 +1,7 @@
 package playtest;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
@@ -29,6 +30,7 @@ public class Cocktail {
         this.name = name;
         this.source = source;
         this.ingredients = ingredients;
+        Collections.sort(ingredients, (o1, o2) -> o1.compareTo(o2));
         this.garnishes = garnishes;
         this.style = style;
         this.served = served;
@@ -41,11 +43,21 @@ public class Cocktail {
         this.name = name;
         this.source = source;
         this.ingredients = ingredients;
+        Collections.sort(ingredients, (o1, o2) -> o1.compareTo(o2));
         this.garnishes = garnishes;
         this.style = style;
         this.served = served;
         this.special = special;
         this.tastingNotes = tastingNotes;
+    }
+
+
+    public ArrayList<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public String getName() {
+        return this.name;
     }
 
 
@@ -103,4 +115,31 @@ public class Cocktail {
         xcocktail.appendChild(xspecial);        
     } 
     
+
+    public String findSpirit(Cocktail ct){
+        ArrayList<Ingredient> list = ct.getIngredients();
+        for(int ii=0; ii<list.size(); ii++) {
+            if(list.get(ii).getType().equals("spirit")) {
+                System.out.println(list.get(ii));
+                return list.get(ii).getName();
+            }
+        }
+        return "";
+    }
+
+
+    public int compareTo(Cocktail other) { 
+        String thisSpirit = findSpirit(this);
+        String otherSpirit = findSpirit(other);
+        System.out.println("Comparing " + thisSpirit + " and " + otherSpirit);
+        int comp = thisSpirit.compareTo(otherSpirit); 
+        if(comp != 0) { // Not the same bottle
+            return comp;
+        } else {
+            return this.getName().compareTo(other.getName());
+        }
+
+    }
+
+
 }

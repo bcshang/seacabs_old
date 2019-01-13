@@ -85,7 +85,7 @@ public class ingCreationGUIController {
         }
 
         addedToList.add(createdIng);
-
+        
         System.out.println("Created Ingredient");
     }
 

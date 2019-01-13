@@ -5,6 +5,7 @@ package playtest;
  */
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class SeaList {
     ArrayList<?> list;
@@ -22,7 +23,11 @@ public class SeaList {
 
 
     public void sortList() {
-
+        if(type == Common.XMLType.MASTER_INGREDIENTS || type == Common.XMLType.MASTER_BOTTLES) {
+            Collections.sort((ArrayList<Ingredient>)list, (o1, o2) -> o1.compareTo(o2));
+        } else if(type == Common.XMLType.MASTER_RECIPES || type == Common.XMLType.PERSONAL_RECIPES) {
+            Collections.sort((ArrayList<Cocktail>)list, (o1, o2) -> o1.compareTo(o2));
+        }
     }
 
 
@@ -32,6 +37,7 @@ public class SeaList {
         } else if((type == Common.XMLType.MASTER_RECIPES || type == Common.XMLType.PERSONAL_RECIPES) && obj instanceof Cocktail) {
             ((ArrayList<Cocktail>)list).add((Cocktail)obj);
         } 
+        sortList();
         Write.write(this);
     }
 

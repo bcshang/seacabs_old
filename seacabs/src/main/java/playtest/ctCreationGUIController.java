@@ -117,6 +117,12 @@ public class ctCreationGUIController {
     }
 
 
+    public void onClickUpdateIngredientList() {
+        // System.out.println("On click update");
+        ingredientPickerChoiceBox.setItems(FXCollections.observableArrayList(seac.getIngredientListString()));
+    }
+
+
     public void printDebug() {
         System.out.println("Recipe Saved!");
         

@@ -10,6 +10,8 @@ import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
+import java.util.Collections;
+
 public class Ingredient {
     enum ingType {
         MINIMAL, PERSONAL, FULL;
@@ -76,6 +78,12 @@ public class Ingredient {
                 "\n\tAmount: " + amount + 
                 "\n\tUnit: " + unit + "\n";
     }
+
+
+    public int compareTo(Ingredient other) {
+        return this.getName().compareTo(other.getName());
+    }
+
 
     /**
      * Creates an XML element of an ingredient that is a child to the document

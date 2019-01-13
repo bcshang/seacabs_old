@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playtest.ctCreationGUIController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="playtest.ctCreationGUIController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
@@ -34,7 +34,7 @@
             <AnchorPane layoutX="257.0" layoutY="376.0" prefHeight="124.0" prefWidth="584.0">
                <children>
                   <Button id="addIngredientButton" fx:id="addIngredientButton" layoutX="136.0" layoutY="84.0" mnemonicParsing="false" onAction="#addIngredientOnClick" text="Add Ingredient" />
-                  <ChoiceBox id="ingredientPickerChoiceBox" fx:id="ingredientPickerChoiceBox" layoutY="14.0" prefHeight="26.0" prefWidth="387.0" />
+                  <ChoiceBox id="ingredientPickerChoiceBox" fx:id="ingredientPickerChoiceBox" layoutY="14.0" onMouseClicked="#onClickUpdateIngredientList" prefHeight="26.0" prefWidth="387.0" />
                   <TextField id="ingredientAmountTextField" fx:id="ingredientAmountTextField" layoutX="101.0" layoutY="49.0" prefHeight="26.0" prefWidth="72.0" promptText="Amount" />
                   <Button id="createIngButton" fx:id="createIngButton" layoutX="484.0" layoutY="84.0" mnemonicParsing="false" onAction="#createIngButtonOnClick" text="Create Ingredient" />
                   <ChoiceBox id="unitChoiceBox" fx:id="unitChoiceBox" layoutX="216.0" layoutY="49.0" prefHeight="26.0" prefWidth="72.0" />
