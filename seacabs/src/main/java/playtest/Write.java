@@ -45,13 +45,12 @@ public class Write {
             ArrayList<?> list = seaList.getList();
             switch(seaList.getType()) {
                     case MASTER_RECIPES:
+                    case PERSONAL_RECIPES:
                         rootElement = doc.createElement("recipes");
                         doc.appendChild(rootElement);
                         for(int ii=0; ii<list.size(); ii++) {
                             ((Cocktail)(list.get(ii))).toXML(doc, rootElement, seaList.getType());
                         }          
-                        break;
-                    case PERSONAL_RECIPES:
                         break;
                     case MASTER_BOTTLES:
                         break;

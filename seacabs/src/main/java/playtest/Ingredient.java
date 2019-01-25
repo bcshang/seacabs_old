@@ -24,6 +24,7 @@ public class Ingredient {
 
     String name;
     String type;
+    String group;
     double amount;
     String unit;
 
@@ -33,13 +34,13 @@ public class Ingredient {
     /**
      * Ingredient constructor for FULL type
      * @param  name   name of ingredient
-     * @param  type   type of ingredient
+     * @param  group  group of ingredient
      * @param  amount amount of ingredient
      * @param  unit   unit of ingredient
      */
-    public Ingredient(String name, String type, double amount, String unit) {
+    public Ingredient(String name, String group, double amount, String unit) {
         this.name = name;
-        this.type = type;
+        this.group = group;
         this.amount = amount;
         this.unit = unit;
         ingt = ingType.FULL;
@@ -48,12 +49,12 @@ public class Ingredient {
     /**
      * Ingredient Constructor for MINIMAL type
      * @param  name        name
-     * @param  type        type
+     * @param  group        group
      * @param  description description
      */
-    public Ingredient(String name, String type, String description) {
+    public Ingredient(String name, String group, String description) {
         this.name = name;
-        this.type = type;
+        this.group = group;
         this.description = description;
         ingt = ingType.MINIMAL;
     }
@@ -64,6 +65,10 @@ public class Ingredient {
     }
 
     public String getType() {
+        return type;
+    }
+
+    public String getGroup() {
         return type;
     }
 

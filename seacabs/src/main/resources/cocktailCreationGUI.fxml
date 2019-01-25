@@ -10,23 +10,23 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="playtest.ctCreationGUIController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playtest.ctCreationGUIController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Button id="saveRecipeButton" fx:id="saveRecipeButton" layoutX="579.0" layoutY="512.0" mnemonicParsing="false" onAction="#saveRecipeOnClick" text="Save Recipe" />
+            <Button id="saveRecipeButton" fx:id="saveRecipeButton" layoutX="580.0" layoutY="576.0" mnemonicParsing="false" onAction="#saveRecipeOnClick" text="Save Recipe" />
             <TextField id="cnameTextField" fx:id="cnameTextField" layoutX="40.0" layoutY="49.0" promptText="Name of Cocktail" />
             <TextField id="cSourceTextField" fx:id="cSourceTextField" layoutX="40.0" layoutY="103.0" promptText="Source" />
             <TextField id="cGarnishTextField" fx:id="cGarnishTextField" layoutX="40.0" layoutY="151.0" promptText="Garnish(es)" />
             <ChoiceBox id="servedChoiceBox" fx:id="servedChoiceBox" layoutX="50.0" layoutY="194.0" prefWidth="150.0" />
             <ChoiceBox id="styleChoiceBox" fx:id="styleChoiceBox" layoutX="50.0" layoutY="243.0" prefWidth="150.0" />
             <TextField id="cSpecialTextField" fx:id="cSpecialTextField" layoutX="40.0" layoutY="299.0" promptText="Special Instructions" />
-            <ChoiceBox id="fileChoiceBox" fx:id="fileChoiceBox" layoutX="422.0" layoutY="512.0" prefWidth="150.0" />
+            <ChoiceBox id="fileChoiceBox" fx:id="fileChoiceBox" layoutX="421.0" layoutY="576.0" prefWidth="150.0" />
             <TextArea id="cTasNotTextArea" fx:id="cTasNotTextArea" layoutX="25.0" layoutY="338.0" prefHeight="200.0" prefWidth="200.0" promptText="Tasting Notes" />
             <TableView id="ingredientTableView" fx:id="ingredientTableView" layoutX="267.0" layoutY="14.0" prefHeight="345.0" prefWidth="625.0">
                <columns>
                   <TableColumn id="cTableName" fx:id="cTableName" prefWidth="186.0" text="Name" />
-                  <TableColumn id="cTableType" fx:id="cTableType" prefWidth="144.0" text="Type" />
+                  <TableColumn id="cTableGroup" fx:id="cTableGroup" prefWidth="144.0" text="Type" />
                   <TableColumn id="cTableAmount" fx:id="cTableAmount" prefWidth="107.0" text="Amount" />
                   <TableColumn id="cTableUnit" fx:id="cTableUnit" prefWidth="99.0" text="Unit" />
                </columns>
@@ -41,6 +41,7 @@
                   <Button id="removeIngredientButton" fx:id="removeIngredientButton" layoutX="479.0" layoutY="14.0" mnemonicParsing="false" onAction="#removeIngredientOnClick" text="Remove Ingredient" />
                </children>
             </AnchorPane>
+            <ChoiceBox id="ratingChoiceBox" fx:id="ratingChoiceBox" layoutX="421.0" layoutY="525.0" prefWidth="150.0" />
       </children>
          <padding>
             <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />

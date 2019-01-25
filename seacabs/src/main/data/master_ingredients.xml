@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ingredients>
-    <ingredient type="sour">
+    <ingredient group="sour">
         <name>lime juice</name>
         <description>juice of a lime</description>
     </ingredient>
-    <ingredient type="plant">
+    <ingredient group="plant">
         <name>mint</name>
         <description>mint leaves</description>
     </ingredient>
-    <ingredient type="fruit">
+    <ingredient group="fruit">
         <name>raspberry</name>
         <description>a raspberry</description>
     </ingredient>
-    <ingredient type="spirit">
-        <name>rum - dark</name>
+    <ingredient group="spirit">
+        <name>rum - aged</name>
         <description>typically amber and aged</description>
     </ingredient>
-    <ingredient type="spirit">
+    <ingredient group="spirit">
         <name>rum - light</name>
         <description>typically clear or white and either unaged or aged very little</description>
     </ingredient>
-    <ingredient type="sweet">
+    <ingredient group="sweet">
         <name>simple syrup</name>
         <description>a solution made from equal parts by weight of water and white sugar. equal parts by volume can be substituted if necessary</description>
     </ingredient>

@@ -60,11 +60,14 @@ public class ctCreationGUIController {
     private ChoiceBox fileChoiceBox;
 
     @FXML
+    private ChoiceBox ratingChoiceBox;
+
+    @FXML
     private TableView ingredientTableView;
     @FXML
     private TableColumn cTableName;
     @FXML
-    private TableColumn cTableType;
+    private TableColumn cTableGroup;
     @FXML
     private TableColumn cTableAmount;
     @FXML
@@ -94,26 +97,26 @@ public class ctCreationGUIController {
         updateCFileList(seac.getCocktailFileList());
         updateIngredientPickerChoiceBox(seac.getIngredientListString());
         updateIngredientMaster(seac.getMasterIngredientList());
+        updateRatingList(seac.getRatingList());
     }
 
     public void updateIngredientMaster(ArrayList<SeaList> list) {
         ingredientMaster = list;
     }
-
     public void updateServedList(ArrayList<String> servedList) {
         servedChoiceBox.setItems(FXCollections.observableArrayList(servedList));
     }
-
     public void updateStyleList(ArrayList<String> styleList) {
         styleChoiceBox.setItems(FXCollections.observableArrayList(styleList));
     }
-
     public void updateUnitList(ArrayList<String> unitList) {
         unitChoiceBox.setItems(FXCollections.observableArrayList(unitList));
     }
-
     public void updateCFileList(ArrayList<String> cFileList) {
         fileChoiceBox.setItems(FXCollections.observableArrayList(cFileList));
+    }
+    public void updateRatingList(ArrayList<String> ratingList) {
+        ratingChoiceBox.setItems(FXCollections.observableArrayList(ratingList));
     }
 
     public void updateIngredientPickerChoiceBox(ArrayList<String> ingList) {
@@ -197,7 +200,7 @@ public class ctCreationGUIController {
         String garnish = cGarnishTextField.getText();
         String special = cSpecialTextField.getText();
         String tasting = cSpecialTextField.getText();
-        String served, style, file;
+        String served, style, file, rating;
         try {
             served = servedChoiceBox.getValue().toString();
             style = styleChoiceBox.getValue().toString();
@@ -227,17 +230,31 @@ public class ctCreationGUIController {
         }
         if(addedToList == null) { // Couldn't find it at all (Shouldn't happen)
             System.out.println("Error finding list to add to");
-            System.exit(0);
+            return;
         }
 
         // Create the cocktail
         Cocktail ct;
         if(addedToList.getType() == Common.XMLType.MASTER_RECIPES)
             ct = new Cocktail(name, source, ingArrayList, garnish, style, served, special);
-        else // assume personal recipe
-            ct = new Cocktail(name, source, ingArrayList, garnish, style, served, special, tasting);
-
+        else {// assume personal recipe
+            try{
+                rating = ratingChoiceBox.getValue().toString();
+            } catch (Exception e) {
+                System.out.println("Please select a rating");
+                return;
+            }
+            ct = new Cocktail(name, source, ingArrayList, garnish, style, served, special, tasting, rating);
+        }
         addedToList.add(ct);
+
+
+        cnameTextField.clear();
+        cSourceTextField.clear();
+        cGarnishTextField.clear();
+        cSpecialTextField.clear();
+        cSpecialTextField.clear();
+
     }
 
 
@@ -310,7 +327,7 @@ public class ctCreationGUIController {
     private void initialize(){
         System.out.println("Initializing GUI Controller");
         cTableName.setCellValueFactory(new PropertyValueFactory<>("name"));
-        cTableType.setCellValueFactory(new PropertyValueFactory<>("type"));
+        cTableGroup.setCellValueFactory(new PropertyValueFactory<>("group"));
         cTableAmount.setCellValueFactory(new PropertyValueFactory<>("amount"));
         cTableUnit.setCellValueFactory(new PropertyValueFactory<>("unit"));
     }

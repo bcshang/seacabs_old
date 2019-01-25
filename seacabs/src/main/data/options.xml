@@ -20,12 +20,19 @@
         <unit>oz</unit>
         <unit>pieces</unit>
     </option>
-    <option type="ingtype">
-        <ingtype>fruit</ingtype>
-        <ingtype>liqueur</ingtype>
-        <ingtype>plant</ingtype>
-        <ingtype>sour</ingtype>
-        <ingtype>spirit</ingtype>
-        <ingtype>sweet</ingtype>
+    <option type="inggroup">
+        <inggroup>fruit</inggroup>
+        <inggroup>liqueur</inggroup>
+        <inggroup>plant</inggroup>
+        <inggroup>sour</inggroup>
+        <inggroup>spirit</inggroup>
+        <inggroup>sweet</inggroup>
+    </option>
+    <option type="rating">
+        <rating>maybe</rating>
+        <rating>no</rating>
+        <rating>probably</rating>
+        <rating>probably not</rating>
+        <rating>yes</rating>
     </option>
 </options>

@@ -34,7 +34,8 @@ public class Seacabs{
     ArrayList<String> servedList;
     ArrayList<String> styleList;
     ArrayList<String> unitList;
-    ArrayList<String> typeList;
+    ArrayList<String> groupList;
+    ArrayList<String> ratingList;
 
     /**
      * Class Constructor
@@ -74,8 +75,11 @@ public class Seacabs{
         return unitList;
     }
     
-    public ArrayList<String> getTypeList() {
-        return typeList;
+    public ArrayList<String> getGroupList() {
+        return groupList;
+    }
+    public ArrayList<String> getRatingList() {
+        return ratingList;
     }
 
     public ArrayList<SeaList> getMasterIngredientList() {
@@ -139,6 +143,7 @@ public class Seacabs{
                         break;
                     case "PERSONAL_RECIPES":
                         type = Common.XMLType.PERSONAL_RECIPES;
+                        personalCocktailLists.add(new SeaList((ArrayList<Cocktail>)Parse.parseFile(folder + splitString[0], type), type, splitString[0]));
                         break;
                     case "MASTER_BOTTLES":
                         type = Common.XMLType.MASTER_BOTTLES;
@@ -170,7 +175,8 @@ public class Seacabs{
         servedList = Parse.parseServed(folder + "options.xml");
         styleList = Parse.parseStyle(folder + "options.xml");
         unitList = Parse.parseUnit(folder + "options.xml");
-        typeList = Parse.parseIngType(folder + "options.xml");
+        groupList = Parse.parseIngGroup(folder + "options.xml");
+        ratingList = Parse.parseRating(folder + "options.xml");
 
         // System.out.println();
         // for(int ii=0; ii<masterCocktailLists.get(0).getList().size(); ii++) {

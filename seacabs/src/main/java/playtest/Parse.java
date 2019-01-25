@@ -22,7 +22,7 @@ public class Parse {
             case MASTER_RECIPES:
                 return parseMasterRecipe(fileName);
             case PERSONAL_RECIPES:
-                return null;
+                return parsePersonalRecipe(fileName);
             case MASTER_BOTTLES:
                 return null; 
             case MASTER_INGREDIENTS:
@@ -80,8 +80,8 @@ public class Parse {
                         String ingName = getInner(ingElement, "name");
                         String ingUnit = getInner(ingElement, "unit");
                         double ingAmount = Double.parseDouble(getInner(ingElement, "amount"));
-                        String ingType = ingElement.getAttribute("type");
-                        Ingredient ing = new Ingredient(ingName, ingType, ingAmount, ingUnit);
+                        String ingGroup = ingElement.getAttribute("group");
+                        Ingredient ing = new Ingredient(ingName, ingGroup, ingAmount, ingUnit);
                         ingredients.add(ing);
                     }
 
@@ -93,6 +93,71 @@ public class Parse {
                     
                     // Create the cocktail and add it to the list
                     Cocktail ct = new Cocktail(name, source, ingredients, garnish, style, served, special);
+
+                    cocktails.add(ct);
+                }
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return cocktails;
+    }
+
+
+
+    /**
+     * Parses personal recipe list and returns an arraylist of the cocktails found
+     * @param  fileName The complete filepath of the file to be parsed
+     * @return          Arraylist of Cocktail Classes
+     */
+    public static ArrayList<Cocktail> parsePersonalRecipe(String fileName) {
+        ArrayList<Cocktail> cocktails = new ArrayList<Cocktail>();
+        System.out.println("Parsing personal recipes from " + fileName);
+        try {
+            // Try to get the file
+            File inputFile = new File(fileName);
+
+            // Create the document builder for the file
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+
+            // Begin actual parsing
+            NodeList nList = doc.getElementsByTagName("recipe");
+            System.out.println("Found " + nList.getLength() + " recipe(s)");
+            for(int ii = 0; ii < nList.getLength(); ii++) {
+                Node nNode = nList.item(ii);
+
+                if(nNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element eElement = (Element) nNode;
+                    String name = getInner(eElement, "name");
+                    String source = getInner(eElement, "source");
+
+                    // Parse ingredients
+                    NodeList ingList = eElement.getElementsByTagName("ingredient");
+                    ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>();
+                    for(int jj = 0; jj < ingList.getLength(); jj++) {
+                        Element ingElement = (Element) ingList.item(jj);
+                        String ingName = getInner(ingElement, "name");
+                        String ingUnit = getInner(ingElement, "unit");
+                        double ingAmount = Double.parseDouble(getInner(ingElement, "amount"));
+                        String ingGroup = ingElement.getAttribute("group");
+                        Ingredient ing = new Ingredient(ingName, ingGroup, ingAmount, ingUnit);
+                        ingredients.add(ing);
+                    }
+
+
+                    String garnish = getInner(eElement, "garnish");
+                    String style = getInner(eElement, "style");
+                    String served = getInner(eElement, "served");
+                    String special = getInner(eElement, "special");
+                    String tasting = getInner(eElement, "tasting");
+                    String rating = getInner(eElement, "rating");
+                    
+                    // Create the cocktail and add it to the list
+                    Cocktail ct = new Cocktail(name, source, ingredients, garnish, style, served, special, tasting, rating);
 
                     cocktails.add(ct);
                 }
@@ -122,8 +187,8 @@ public class Parse {
                     Element eElement = (Element) nNode;
                     String name = getInner(eElement, "name");
                     String description = getInner(eElement, "description");
-                    String ingType = eElement.getAttribute("type");
-                    Ingredient ing = new Ingredient(name, ingType, description);
+                    String ingGroup = eElement.getAttribute("group");
+                    Ingredient ing = new Ingredient(name, ingGroup, description);
                     ingList.add(ing);
             }
         } catch (Exception e) {
@@ -271,9 +336,9 @@ public class Parse {
      * @param  fileName [description]
      * @return          [description]
      */
-    public static ArrayList<String> parseIngType(String fileName) {
+    public static ArrayList<String> parseIngGroup(String fileName) {
         ArrayList<String> ingTypeList = new ArrayList<String>();
-        System.out.println("Parsing ingredient types from " + fileName);
+        System.out.println("Parsing ingredient groups from " + fileName);
         try {
             File inputFile = new File(fileName);
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -289,9 +354,9 @@ public class Parse {
                 if(nNode.getNodeType() == Node.ELEMENT_NODE) {
                     Element eElement = (Element) nNode;
                     String type = eElement.getAttribute("type");
-                    if(type.equals("ingtype")) {
-                        System.out.println("ingtype");
-                        NodeList styList = eElement.getElementsByTagName("ingtype");
+                    if(type.equals("inggroup")) {
+                        // System.out.println("ingtype");
+                        NodeList styList = eElement.getElementsByTagName("inggroup");
                         for(int jj = 0; jj < styList.getLength(); jj++) {
                             String typeOption = styList.item(jj).getTextContent().trim();
                             ingTypeList.add(typeOption);
@@ -305,6 +370,48 @@ public class Parse {
             e.printStackTrace();
         }
         return ingTypeList;
+    }
+
+    /**
+     * 
+     * See previous function for more details as this is more or less copy pasted
+     * @param  fileName [description]
+     * @return          [description]
+     */
+    public static ArrayList<String> parseRating(String fileName) {
+        ArrayList<String> ratingList = new ArrayList<String>();
+        System.out.println("Parsing rating from " + fileName);
+        try {
+            File inputFile = new File(fileName);
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            NodeList nList = doc.getElementsByTagName("option");
+
+            // Search for correct type option
+            for(int ii = 0; ii < nList.getLength(); ii++) {
+                Node nNode = nList.item(ii);
+
+                if(nNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element eElement = (Element) nNode;
+                    String type = eElement.getAttribute("type");
+                    if(type.equals("rating")) {
+                        // System.out.println("ingtype");
+                        NodeList styList = eElement.getElementsByTagName("rating");
+                        for(int jj = 0; jj < styList.getLength(); jj++) {
+                            String typeOption = styList.item(jj).getTextContent().trim();
+                            ratingList.add(typeOption);
+                        }
+                        break;
+                    }
+                }
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ratingList;
     }
 
 

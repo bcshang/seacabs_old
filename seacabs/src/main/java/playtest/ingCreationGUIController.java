@@ -18,7 +18,7 @@ public class ingCreationGUIController {
     private TextField ingNameTextField;
 
     @FXML
-    private ChoiceBox ingTypeChoiceBox;
+    private ChoiceBox ingGroupChoiceBox;
 
     @FXML
     private TextArea ingDescTextArea;
@@ -34,7 +34,7 @@ public class ingCreationGUIController {
 
     public void setSeac(Seacabs seac) {
         this.seac = seac;
-        updateTypeList(seac.getTypeList());
+        updateGroupList(seac.getGroupList());
         setIngredientFileArray(seac.getMasterIngredientList());
         setIngredientFileArray(seac.getMasterBottlesList());
     }
@@ -52,7 +52,7 @@ public class ingCreationGUIController {
         String type;
         String file;
         try {
-             type = ingTypeChoiceBox.getValue().toString();
+             type = ingGroupChoiceBox.getValue().toString();
              file = ingFileChoiceBox.getValue().toString();
         } catch(Exception e) {
             System.out.println("Please select an appropriate type and/or file");
@@ -89,8 +89,8 @@ public class ingCreationGUIController {
         System.out.println("Created Ingredient");
     }
 
-    public void updateTypeList(ArrayList<String> typeList) {
-        ingTypeChoiceBox.setItems(FXCollections.observableArrayList(typeList));
+    public void updateGroupList(ArrayList<String> groupList) {
+        ingGroupChoiceBox.setItems(FXCollections.observableArrayList(groupList));
     }
 
 }

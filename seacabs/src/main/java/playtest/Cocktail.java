@@ -29,6 +29,7 @@ public class Cocktail {
     String served;
     String special;
     String tastingNotes;
+    String rating;
 
     // Constructor for master cocktail list that does not come with any tasting notes
     public Cocktail(String name, String source,
@@ -47,7 +48,8 @@ public class Cocktail {
     // Constructor for personal cocktail entries that come with tasting notes and specific bottles
     public Cocktail(String name, String source,
                     ArrayList<Ingredient> ingredients, String garnishes,
-                    String style, String served, String special, String tastingNotes) {
+                    String style, String served, String special,
+                    String tastingNotes, String rating) {
         this.name = name;
         this.source = source;
         this.ingredients = ingredients;
@@ -57,6 +59,7 @@ public class Cocktail {
         this.served = served;
         this.special = special;
         this.tastingNotes = tastingNotes;
+        this.rating = rating;
     }
 
     // Getters
@@ -133,7 +136,10 @@ public class Cocktail {
         if(type == Common.XMLType.PERSONAL_RECIPES) {        
             Element xtasting = doc.createElement("tasting");
             xtasting.appendChild(doc.createTextNode(this.tastingNotes));
-            xcocktail.appendChild(xtasting);        
+            xcocktail.appendChild(xtasting);  
+            Element xrating = doc.createElement("rating");
+            xrating.appendChild(doc.createTextNode(this.rating));
+            xcocktail.appendChild(xrating);        
         }
     } 
     
