@@ -24,7 +24,7 @@ public class Parse {
             case PERSONAL_RECIPES:
                 return parsePersonalRecipe(fileName);
             case MASTER_BOTTLES:
-                return null; 
+                return parseMasterBottles(fileName); 
             case MASTER_INGREDIENTS:
                 return parseMasterIngredients(fileName);
             default:
@@ -189,6 +189,7 @@ public class Parse {
                     String description = getInner(eElement, "description");
                     String ingGroup = eElement.getAttribute("group");
                     Ingredient ing = new Ingredient(name, ingGroup, description);
+                    // System.out.println(ing);
                     ingList.add(ing);
             }
         } catch (Exception e) {
@@ -196,6 +197,34 @@ public class Parse {
         }
         // System.out.println("Found " + ingList.size() + " ingredients");
         return ingList;
+    }
+
+    public static ArrayList<Ingredient> parseMasterBottles(String fileName) {
+        ArrayList<Ingredient> botList = new ArrayList<Ingredient>();
+        System.out.println("Parsing master ingredients from " + fileName);
+        try {
+            File inputFile = new File(fileName);
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            NodeList nList = doc.getElementsByTagName("bottle");
+            // System.out.println("Found " + nList.getLength() + " ingredients");
+            for(int ii = 0; ii < nList.getLength(); ii++) {
+                    Node nNode = nList.item(ii);
+                    Element eElement = (Element) nNode;
+                    String name = getInner(eElement, "name");
+                    String type = getInner(eElement, "type");
+                    String tasting = getInner(eElement, "tasting");
+                    String rating = getInner(eElement, "rating");
+                    Ingredient ing = new Ingredient(name, type, tasting, rating);
+                    botList.add(ing);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        // System.out.println("Found " + ingList.size() + " ingredients");
+        return botList;
     }
 
 

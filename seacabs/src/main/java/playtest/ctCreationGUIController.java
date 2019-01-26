@@ -130,7 +130,7 @@ public class ctCreationGUIController {
     public void onClickUpdateIngredientList() {
         ArrayList<String> ingListString = seac.getIngredientListString();
         if(ingListString.size() != ingredientPickerSize) {
-            ingredientPickerChoiceBox.setItems(FXCollections.observableArrayList());
+            ingredientPickerChoiceBox.setItems(FXCollections.observableArrayList(ingListString));
             ingredientPickerSize = ingListString.size();
         }
         
@@ -284,7 +284,7 @@ public class ctCreationGUIController {
             return;
         }
         if(!ingredientName.equals("")) { // TODO Fix this to check for null
-            Ingredient addedIng = new Ingredient(ingredientName, masterIng.getType(), damount, unit);
+            Ingredient addedIng = new Ingredient(ingredientName, masterIng.getGroup(), damount, unit);
 
             ingredientTableView.getItems().add(addedIng);
 

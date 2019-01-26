@@ -15,14 +15,18 @@
     <option type="unit">
         <unit>bunches</unit>
         <unit>cl</unit>
+        <unit>dash</unit>
         <unit>leaves</unit>
         <unit>ml</unit>
         <unit>oz</unit>
         <unit>pieces</unit>
+        <unit>thing</unit>
     </option>
     <option type="inggroup">
+        <inggroup>bitters</inggroup>
         <inggroup>fruit</inggroup>
         <inggroup>liqueur</inggroup>
+        <inggroup>liquid</inggroup>
         <inggroup>plant</inggroup>
         <inggroup>sour</inggroup>
         <inggroup>spirit</inggroup>
@@ -33,6 +37,7 @@
         <rating>no</rating>
         <rating>probably</rating>
         <rating>probably not</rating>
+        <rating>unrated</rating>
         <rating>yes</rating>
     </option>
 </options>

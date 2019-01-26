@@ -28,11 +28,15 @@ public class Ingredient {
     double amount;
     String unit;
 
+
+    String tasting;
+    String rating;
+
     String description;
-    String review;
 
     /**
      * Ingredient constructor for FULL type
+     * Typically a part of a cocktail recipe
      * @param  name   name of ingredient
      * @param  group  group of ingredient
      * @param  amount amount of ingredient
@@ -44,6 +48,22 @@ public class Ingredient {
         this.amount = amount;
         this.unit = unit;
         ingt = ingType.FULL;
+    }
+
+    /**
+     * Ingredient Constructor for a bottle
+     * @param  name    [description]
+     * @param  type    [description]
+     * @param  tasting [description]
+     * @param  rating  [description]
+     * @return         [description]
+     */
+    public Ingredient(String name, String type, String tasting, String rating) {
+        this.name = name;
+        this.type = type;
+        this.tasting = tasting;
+        this.rating = rating;
+        ingt = ingType.BOTTLE;
     }
 
     /**
@@ -69,7 +89,7 @@ public class Ingredient {
     }
 
     public String getGroup() {
-        return type;
+        return group;
     }
 
     public double getAmount() {
@@ -95,10 +115,26 @@ public class Ingredient {
 
     @Override
     public String toString() {
-        return "\tType: " + type +
-                "\n\tName: " + name +
-                "\n\tAmount: " + amount + 
-                "\n\tUnit: " + unit + "\n";
+        switch(this.ingt) {
+            case FULL:
+                return "\tType: " + type +
+                        "\n\tName: " + name +
+                        "\n\tAmount: " + amount + 
+                        "\n\tUnit: " + unit + "\n";
+                
+            case BOTTLE:
+                return "\tType: " + type +
+                        "\n\tName: " + name +
+                        "\n\ttasting: " + tasting + 
+                        "\n\trating: " + rating + "\n";
+            case MINIMAL:
+                return "\tGroup: " + group +
+                        "\n\tName: " + name +
+                        "\n\tdescription: " + description + "\n";
+
+        }
+        return "Error in ingredient list";
+
     }
 
     /**
@@ -120,9 +156,9 @@ public class Ingredient {
      */
     public Element toXML(Document doc) {
         Element xingredient = doc.createElement("ingredient");
-        Attr xtype = doc.createAttribute("type");
-        xtype.setValue(type);
-        xingredient.setAttributeNode(xtype);
+        Attr xgroup = doc.createAttribute("group");
+        xgroup.setValue(group);
+        xingredient.setAttributeNode(xgroup);
 
         Element xname = doc.createElement("name");
         xname.appendChild(doc.createTextNode(this.name));
@@ -150,9 +186,9 @@ public class Ingredient {
         if(type == Common.XMLType.MASTER_INGREDIENTS) {
             Element xingredient = doc.createElement("ingredient");
             root.appendChild(xingredient);
-            Attr xtype = doc.createAttribute("type");
-            xtype.setValue(this.type);
-            xingredient.setAttributeNode(xtype);
+            Attr xgroup = doc.createAttribute("group");
+            xgroup.setValue(this.group);
+            xingredient.setAttributeNode(xgroup);
 
             Element xname = doc.createElement("name");
             xname.appendChild(doc.createTextNode(this.name));
@@ -164,17 +200,22 @@ public class Ingredient {
         } else { // assume MASTER_BOTTLES TODO figure out how this is gonna work
             Element xingredient = doc.createElement("bottle");
             root.appendChild(xingredient);
-            Attr xtype = doc.createAttribute("type");
-            xtype.setValue(this.type);
-            xingredient.setAttributeNode(xtype);
 
             Element xname = doc.createElement("name");
             xname.appendChild(doc.createTextNode(this.name));
             xingredient.appendChild(xname);
 
-            Element xunit = doc.createElement("description");
-            xunit.appendChild(doc.createTextNode(this.description));
-            xingredient.appendChild(xunit); 
+            Element xtype = doc.createElement("type");
+            xtype.appendChild(doc.createTextNode(this.type));
+            xingredient.appendChild(xtype);
+
+            Element xtasting = doc.createElement("tasting");
+            xtasting.appendChild(doc.createTextNode(this.tasting));
+            xingredient.appendChild(xtasting); 
+
+            Element xrating = doc.createElement("rating");
+            xrating.appendChild(doc.createTextNode(this.rating));
+            xingredient.appendChild(xrating); 
         }
     }
 

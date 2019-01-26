@@ -1,3 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <recipes>
+    <recipe>
+        <name>gimlet</name>
+        <source>N/A</source>
+        <ingredient group="sour">
+            <name>lime juice</name>
+            <amount>.75</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>beefeater gin</name>
+            <amount>1.5</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sweet">
+            <name>simple syrup</name>
+            <amount>0.75</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <garnish>N/A</garnish>
+        <style>shaken</style>
+        <served>up</served>
+        <special>N/A</special>
+        <tasting>light gin flavor, mostly sourness and sweetness in the drink</tasting>
+        <rating>maybe</rating>
+    </recipe>
 </recipes>
