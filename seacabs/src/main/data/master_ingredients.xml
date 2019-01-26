@@ -8,9 +8,17 @@
         <name>Orange bitters</name>
         <description>orange style bitters</description>
     </ingredient>
+    <ingredient group="sweet">
+        <name>agave nectar - light</name>
+        <description>nectar from the agave plant, a light version</description>
+    </ingredient>
     <ingredient group="liquid">
         <name>egg white</name>
         <description>white of an egg</description>
+    </ingredient>
+    <ingredient group="liquid">
+        <name>grapefruit soda</name>
+        <description>self explanatory, buy it in the soft drinks aisle</description>
     </ingredient>
     <ingredient group="sweet">
         <name>honey syrup (3:1)</name>

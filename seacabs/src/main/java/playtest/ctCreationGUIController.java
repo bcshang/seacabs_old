@@ -278,14 +278,16 @@ public class ctCreationGUIController {
                 break;
         }
         if(masterIng == null) {
-            for(int ii=0; ii<ingredientMaster.size(); ii++) {
+            for(int ii=0; ii<bottleMaster.size(); ii++) {
                 masterIng = bottleMaster.get(ii).getIngredient(ingredientName);
+                // System.out.println("bottle master size " + bottleMaster.get(0).size());
                 if(masterIng != null)
                     break;   
             }
         }
         if(masterIng == null) {
             System.out.println("Invalid ingredient or list");
+            return;
         }
 
         double damount;

@@ -85,6 +85,9 @@ public class ingCreationGUIController {
         }
 
         addedToList.add(createdIng);
+
+        ingNameTextField.clear();
+        ingDescTextArea.clear();
         
         System.out.println("Created Ingredient");
     }

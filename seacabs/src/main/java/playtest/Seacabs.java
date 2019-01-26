@@ -148,8 +148,6 @@ public class Seacabs{
                     case "MASTER_BOTTLES":
                         type = Common.XMLType.MASTER_BOTTLES;
                         masterBottlesList.add(new SeaList((ArrayList<Ingredient>)Parse.parseFile(folder + splitString[0], type), type, splitString[0]));
-                        masterBottlesList.get(0).sortList();
-                        Write.write(masterBottlesList.get(0));
                         break;
                     case "MASTER_INGREDIENTS":
                         type = Common.XMLType.MASTER_INGREDIENTS;

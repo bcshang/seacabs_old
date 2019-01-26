@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ingredients>
+    <ingredient group="bitters">
+        <name>Angostura Bitters</name>
+        <description>bitters made from something</description>
+    </ingredient>
+    <ingredient group="bitters">
+        <name>Orange bitters</name>
+        <description>orange style bitters</description>
+    </ingredient>
+    <ingredient group="sweet">
+        <name>agave nectar - light</name>
+        <description>nectar from the agave plant, a light version</description>
+    </ingredient>
     <ingredient group="liquid">
         <name>egg white</name>
         <description>white of an egg</description>

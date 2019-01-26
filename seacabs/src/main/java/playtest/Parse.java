@@ -201,7 +201,7 @@ public class Parse {
 
     public static ArrayList<Ingredient> parseMasterBottles(String fileName) {
         ArrayList<Ingredient> botList = new ArrayList<Ingredient>();
-        System.out.println("Parsing master ingredients from " + fileName);
+        System.out.println("Parsing master bottles from " + fileName);
         try {
             File inputFile = new File(fileName);
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -209,7 +209,7 @@ public class Parse {
             Document doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
             NodeList nList = doc.getElementsByTagName("bottle");
-            // System.out.println("Found " + nList.getLength() + " ingredients");
+            System.out.println("Found " + nList.getLength() + " bottles");
             for(int ii = 0; ii < nList.getLength(); ii++) {
                     Node nNode = nList.item(ii);
                     Element eElement = (Element) nNode;

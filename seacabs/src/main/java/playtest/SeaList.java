@@ -70,6 +70,10 @@ public class SeaList {
         return written;
     }
 
+    public int size() {
+        return list.size();
+    }
+
     // Setters
     public void setWritten() {
         written = true;
@@ -83,17 +87,17 @@ public class SeaList {
      *              Ingredient object if ingredient is found
      */
     public Ingredient getIngredient(String name) {
-        if(type != Common.XMLType.MASTER_INGREDIENTS) {
-            return null;
+        switch(type) {
+            case MASTER_INGREDIENTS:
+            case MASTER_BOTTLES:
+                ArrayList<Ingredient> ingList = (ArrayList<Ingredient>) list;
+                for(int ii=0; ii<ingList.size(); ii++) {
+                    if(ingList.get(ii).getName().equalsIgnoreCase(name)) {
+                        return ingList.get(ii);
+                    }
+                }
+            default:
+                return null;
         }
-
-        ArrayList<Ingredient> ingList = (ArrayList<Ingredient>) list;
-        for(int ii=0; ii<ingList.size(); ii++) {
-            if(ingList.get(ii).getName().equalsIgnoreCase(name)) {
-                return ingList.get(ii);
-            }
-        }
-
-        return null;
     }
 }

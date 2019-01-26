@@ -153,7 +153,7 @@ public class Cocktail {
     public String findSpirit(Cocktail ct){
         ArrayList<Ingredient> list = ct.getIngredients();
         for(int ii=0; ii<list.size(); ii++) {
-            if(list.get(ii).getType().equals("spirit")) {
+            if(list.get(ii).getGroup().equals("spirit")) {
                 System.out.println(list.get(ii));
                 return list.get(ii).getName();
             }

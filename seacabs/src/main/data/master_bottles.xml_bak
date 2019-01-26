@@ -1,58 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ingredients>
     <bottle>
-        <name>Beefeater</name>
-        <type>gin - london dry</type>
-        <tasting>Tastes great in cocktails as long as it's diluted some, otherwise strong herbal tones</tasting>
-        <rating>yes</rating>
-    </bottle>
-    <bottle>
-        <name>Buffalo Trace</name>
-        <type>whiskey - bourbon</type>
-        <tasting>spicyness when it hits your tongue, burns on the way down, sickly aftertaste, I don't think I like bourbon</tasting>
-        <rating>probably not</rating>
-    </bottle>
-    <bottle>
-        <name>El Dorado 3</name>
-        <type>rum - light</type>
-        <tasting>Slightly mellower taste than the 8 year version actually, still sharp and dry, doesn't leave as strong an aftertaste</tasting>
-        <rating>maybe</rating>
-    </bottle>
-    <bottle>
-        <name>El Dorado 8</name>
-        <type>rum - aged</type>
-        <tasting>Very dry and a little smokey, burns a good bit but not terribly, leaves a strong aftertaste</tasting>
-        <rating>maybe</rating>
-    </bottle>
-    <bottle>
-        <name>Flor de Cana 7</name>
-        <type>rum - aged</type>
-        <tasting>very strong ethanol flavor, sickly sweetness</tasting>
-        <rating>no</rating>
-    </bottle>
-    <bottle>
-        <name>Glenlivit 12</name>
-        <type>scotch - single malt</type>
-        <tasting>Smokey, slight burn on the throat, little harsh but not bad</tasting>
-        <rating>maybe</rating>
-    </bottle>
-    <bottle>
-        <name>Highland Park 12</name>
-        <type>scotch - single malt</type>
-        <tasting>very smokey, lingering aftertaste, acquired taste but worth it</tasting>
-        <rating>yes</rating>
-    </bottle>
-    <bottle>
         <name>Maison Rouge VSOP</name>
         <type>cognac</type>
         <tasting>fruity and smokey, sorta pleasant straight but definitely should mix to get it a little more mellow</tasting>
         <rating>unrated</rating>
     </bottle>
     <bottle>
-        <name>Milagro Silver</name>
-        <type>tequila - light</type>
-        <tasting>Dry, burns on the way down, bitter taste</tasting>
-        <rating>no</rating>
+        <name>Beefeater</name>
+        <type>gin - london dry</type>
+        <tasting>Tastes great in cocktails as long as it's diluted some, otherwise strong herbal tones</tasting>
+        <rating>yes</rating>
+    </bottle>
+    <bottle>
+        <name>Tanqueray</name>
+        <type>gin - london dry</type>
+        <tasting>Very strong juniper, extremely dry and the herbs hit you in the face</tasting>
+        <rating>probably</rating>
     </bottle>
     <bottle>
         <name>Pallini Limoncello</name>
@@ -67,10 +31,46 @@
         <rating>yes</rating>
     </bottle>
     <bottle>
+        <name>El Dorado 8</name>
+        <type>rum - aged</type>
+        <tasting>Very dry and a little smokey, burns a good bit but not terribly, leaves a strong aftertaste</tasting>
+        <rating>maybe</rating>
+    </bottle>
+    <bottle>
+        <name>Flor de Cana 7</name>
+        <type>rum - aged</type>
+        <tasting>very strong ethanol flavor, sickly sweetness</tasting>
+        <rating>no</rating>
+    </bottle>
+    <bottle>
+        <name>El Dorado 3</name>
+        <type>rum - light</type>
+        <tasting>Slightly mellower taste than the 8 year version actually, still sharp and dry, doesn't leave as strong an aftertaste</tasting>
+        <rating>maybe</rating>
+    </bottle>
+    <bottle>
         <name>Plantation 3 Star</name>
         <type>rum - light</type>
         <tasting>slight burn on the mouth that lingers into some spicyness, rum taste =\</tasting>
         <rating>yes</rating>
+    </bottle>
+    <bottle>
+        <name>Glenlivit 12</name>
+        <type>scotch - single malt</type>
+        <tasting>Smokey, slight burn on the throat, little harsh but not bad</tasting>
+        <rating>maybe</rating>
+    </bottle>
+    <bottle>
+        <name>Highland Park 12</name>
+        <type>scotch - single malt</type>
+        <tasting>very smokey, lingering aftertaste, acquired taste but worth it</tasting>
+        <rating>yes</rating>
+    </bottle>
+    <bottle>
+        <name>Milagro Silver</name>
+        <type>tequila - light</type>
+        <tasting>Dry, burns on the way down, bitter taste</tasting>
+        <rating>no</rating>
     </bottle>
     <bottle>
         <name>Russian Standard Platinum</name>
@@ -85,9 +85,9 @@
         <rating>unrated</rating>
     </bottle>
     <bottle>
-        <name>Tanqueray</name>
-        <type>gin - london dry</type>
-        <tasting>Very strong juniper, extremely dry and the herbs hit you in the face</tasting>
-        <rating>probably</rating>
+        <name>Buffalo Trace</name>
+        <type>whiskey - bourbon</type>
+        <tasting>spicyness when it hits your tongue, burns on the way down, sickly aftertaste, I don't think I like bourbon</tasting>
+        <rating>probably not</rating>
     </bottle>
 </ingredients>
