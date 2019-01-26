@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <recipes>
     <recipe>
-        <name>gimlet</name>
+        <name>Gimlet</name>
         <source>N/A</source>
         <ingredient group="spirit">
-            <name>beefeater gin</name>
+            <name>Beefeater</name>
             <amount>1.5</amount>
             <unit>oz</unit>
         </ingredient>
@@ -24,5 +24,60 @@
         <special>N/A</special>
         <tasting>light gin flavor, mostly sourness and sweetness in the drink</tasting>
         <rating>maybe</rating>
+    </recipe>
+    <recipe>
+        <name>Margarita</name>
+        <source>Serious Eats</source>
+        <ingredient group="sweet">
+            <name>agave nectar - light</name>
+            <amount>0.25</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sour">
+            <name>lime juice</name>
+            <amount>1.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>Milagro Silver</name>
+            <amount>2.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>Cointreau</name>
+            <amount>0.75</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <garnish/>
+        <style>shaken</style>
+        <served>up</served>
+        <special/>
+        <tasting>Strong drink, consider lowering tequila by .25 oz, tequila not as tastable, sour/tart</tasting>
+        <rating>yes</rating>
+    </recipe>
+    <recipe>
+        <name>Paloma</name>
+        <source>N/A</source>
+        <ingredient group="spirit">
+            <name>Milagro Silver</name>
+            <amount>2.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="liquid">
+            <name>grapefruit soda</name>
+            <amount>6.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sour">
+            <name>lime juice</name>
+            <amount>0.5</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <garnish>N/A</garnish>
+        <style>stirred</style>
+        <served>on the rocks</served>
+        <special>N/A</special>
+        <tasting>hard to taste the grapefruit, tequila comes through a lot if using 2oz in a standard glass, lime juice untastable</tasting>
+        <rating>no</rating>
     </recipe>
 </recipes>

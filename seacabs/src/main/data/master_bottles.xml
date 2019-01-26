@@ -25,6 +25,12 @@
         <rating>no</rating>
     </bottle>
     <bottle>
+        <name>Cointreau</name>
+        <type>liqueur - orange</type>
+        <tasting>sharp but with a nice orange taste, mild-strong burn on the way down, quite surprisingly sorta pleasant</tasting>
+        <rating>yes</rating>
+    </bottle>
+    <bottle>
         <name>Pierre Ferrand's Dry Curacao</name>
         <type>liqueur - orange</type>
         <tasting>kind of sharp initially, tastes a little orangey which is good but the spirit feels like a not great vodka</tasting>

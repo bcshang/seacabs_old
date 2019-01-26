@@ -154,7 +154,7 @@ public class Cocktail {
         ArrayList<Ingredient> list = ct.getIngredients();
         for(int ii=0; ii<list.size(); ii++) {
             if(list.get(ii).getGroup().equals("spirit")) {
-                System.out.println(list.get(ii));
+                // System.out.println(list.get(ii));
                 return list.get(ii).getName();
             }
         }
@@ -170,7 +170,7 @@ public class Cocktail {
     public int compareTo(Cocktail other) { 
         String thisSpirit = findSpirit(this);
         String otherSpirit = findSpirit(other);
-        System.out.println("Comparing " + thisSpirit + " and " + otherSpirit);
+        // System.out.println("Comparing " + thisSpirit + " and " + otherSpirit);
         int comp = thisSpirit.compareTo(otherSpirit); 
         if(comp != 0) { // Not the same bottle
             return comp;

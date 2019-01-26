@@ -204,8 +204,26 @@ public class ctCreationGUIController {
         String source = cSourceTextField.getText();
         String garnish = cGarnishTextField.getText();
         String special = cSpecialTextField.getText();
-        String tasting = cSpecialTextField.getText();
+        String tasting = cTasNotTextArea.getText();
         String served, style, file, rating;
+        if(name == null) {
+            System.out.println("Please enter a name");
+            return;
+        }
+
+        if(source == null) {
+            source = "N/A";
+        }
+        if(garnish == null) {
+            garnish = "N/A";
+        }
+        if(special == null) {
+            special = "N/A";
+        }
+        if(tasting == null) {
+            tasting = "N/A";
+        }
+
         try {
             served = servedChoiceBox.getValue().toString();
             style = styleChoiceBox.getValue().toString();
@@ -259,6 +277,7 @@ public class ctCreationGUIController {
         cGarnishTextField.clear();
         cSpecialTextField.clear();
         cSpecialTextField.clear();
+        cTasNotTextArea.clear();
 
     }
 
