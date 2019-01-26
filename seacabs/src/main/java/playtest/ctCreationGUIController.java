@@ -278,7 +278,7 @@ public class ctCreationGUIController {
         cSpecialTextField.clear();
         cSpecialTextField.clear();
         cTasNotTextArea.clear();
-
+        ingredientTableView.getItems().clear();
     }
 
 
