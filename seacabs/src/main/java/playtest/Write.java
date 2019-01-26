@@ -53,7 +53,6 @@ public class Write {
                         }          
                         break;
                     case MASTER_BOTTLES:
-                        break;
                     case MASTER_INGREDIENTS:
                         rootElement = doc.createElement("ingredients");
                         doc.appendChild(rootElement);

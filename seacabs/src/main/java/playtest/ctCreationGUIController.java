@@ -88,6 +88,7 @@ public class ctCreationGUIController {
 
     Seacabs seac;
     ArrayList<SeaList> ingredientMaster;
+    ArrayList<SeaList> bottleMaster;
     int ingredientPickerSize = 0;
     public void setSeac(Seacabs seac) {
         this.seac = seac;
@@ -97,11 +98,15 @@ public class ctCreationGUIController {
         updateCFileList(seac.getCocktailFileList());
         updateIngredientPickerChoiceBox(seac.getIngredientListString());
         updateIngredientMaster(seac.getMasterIngredientList());
+        updateBottleMaster(seac.getMasterBottlesList());
         updateRatingList(seac.getRatingList());
     }
 
     public void updateIngredientMaster(ArrayList<SeaList> list) {
         ingredientMaster = list;
+    }
+    public void updateBottleMaster(ArrayList<SeaList> list) {
+        bottleMaster = list;
     }
     public void updateServedList(ArrayList<String> servedList) {
         servedChoiceBox.setItems(FXCollections.observableArrayList(servedList));
@@ -271,6 +276,13 @@ public class ctCreationGUIController {
             masterIng = ingredientMaster.get(ii).getIngredient(ingredientName);
             if(masterIng != null)
                 break;
+        }
+        if(masterIng == null) {
+            for(int ii=0; ii<ingredientMaster.size(); ii++) {
+                masterIng = bottleMaster.get(ii).getIngredient(ingredientName);
+                if(masterIng != null)
+                    break;   
+            }
         }
         if(masterIng == null) {
             System.out.println("Invalid ingredient or list");

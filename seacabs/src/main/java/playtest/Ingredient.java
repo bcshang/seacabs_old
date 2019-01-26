@@ -63,6 +63,7 @@ public class Ingredient {
         this.type = type;
         this.tasting = tasting;
         this.rating = rating;
+        this.group = "spirit";
         ingt = ingType.BOTTLE;
     }
 
@@ -143,7 +144,22 @@ public class Ingredient {
      * @return       compareTo output
      */
     public int compareTo(Ingredient other) {
-        return this.getName().compareTo(other.getName());
+        if(this.ingt == ingType.BOTTLE && other.ingt == ingType.BOTTLE) {
+                int comp = this.getType().compareTo(other.getType());
+                if(comp == 0) {
+                    return this.getName().compareTo(other.getName());
+                }
+                else{
+                    return comp;
+                } 
+        }
+                
+        if(this.group == "spirit")
+            return 1;
+        else if(other.group == "spirit")
+            return -1;
+        else
+            return this.getName().compareTo(other.getName());
     }
 
 

@@ -1,34 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ingredients>
     <bottle>
-        <name>Maison Rouge VSOP</name>
-        <type>cognac</type>
-        <tasting>fruity and smokey, sorta pleasant straight but definitely should mix to get it a little more mellow</tasting>
-        <rating>unrated</rating>
-    </bottle>
-    <bottle>
         <name>Beefeater</name>
         <type>gin - london dry</type>
         <tasting>Tastes great in cocktails as long as it's diluted some, otherwise strong herbal tones</tasting>
         <rating>yes</rating>
     </bottle>
     <bottle>
-        <name>Tanqueray</name>
-        <type>gin - london dry</type>
-        <tasting>Very strong juniper, extremely dry and the herbs hit you in the face</tasting>
-        <rating>probably</rating>
+        <name>Buffalo Trace</name>
+        <type>whiskey - bourbon</type>
+        <tasting>spicyness when it hits your tongue, burns on the way down, sickly aftertaste, I don't think I like bourbon</tasting>
+        <rating>probably not</rating>
     </bottle>
     <bottle>
-        <name>Pallini Limoncello</name>
-        <type>liqueur - limoncello</type>
-        <tasting>Chilled on the rocks - Pleasant lemon smell,  lemon flavor but sharp bitterness overpowers it, taking small sips of it is ok</tasting>
-        <rating>no</rating>
-    </bottle>
-    <bottle>
-        <name>Pierre Ferrand's Dry Curacao</name>
-        <type>liqueur - orange</type>
-        <tasting>kind of sharp initially, tastes a little orangey which is good but the spirit feels like a not great vodka</tasting>
-        <rating>yes</rating>
+        <name>El Dorado 3</name>
+        <type>rum - light</type>
+        <tasting>Slightly mellower taste than the 8 year version actually, still sharp and dry, doesn't leave as strong an aftertaste</tasting>
+        <rating>maybe</rating>
     </bottle>
     <bottle>
         <name>El Dorado 8</name>
@@ -43,18 +31,6 @@
         <rating>no</rating>
     </bottle>
     <bottle>
-        <name>El Dorado 3</name>
-        <type>rum - light</type>
-        <tasting>Slightly mellower taste than the 8 year version actually, still sharp and dry, doesn't leave as strong an aftertaste</tasting>
-        <rating>maybe</rating>
-    </bottle>
-    <bottle>
-        <name>Plantation 3 Star</name>
-        <type>rum - light</type>
-        <tasting>slight burn on the mouth that lingers into some spicyness, rum taste =\</tasting>
-        <rating>yes</rating>
-    </bottle>
-    <bottle>
         <name>Glenlivit 12</name>
         <type>scotch - single malt</type>
         <tasting>Smokey, slight burn on the throat, little harsh but not bad</tasting>
@@ -67,10 +43,34 @@
         <rating>yes</rating>
     </bottle>
     <bottle>
+        <name>Maison Rouge VSOP</name>
+        <type>cognac</type>
+        <tasting>fruity and smokey, sorta pleasant straight but definitely should mix to get it a little more mellow</tasting>
+        <rating>unrated</rating>
+    </bottle>
+    <bottle>
         <name>Milagro Silver</name>
         <type>tequila - light</type>
         <tasting>Dry, burns on the way down, bitter taste</tasting>
         <rating>no</rating>
+    </bottle>
+    <bottle>
+        <name>Pallini Limoncello</name>
+        <type>liqueur - limoncello</type>
+        <tasting>Chilled on the rocks - Pleasant lemon smell,  lemon flavor but sharp bitterness overpowers it, taking small sips of it is ok</tasting>
+        <rating>no</rating>
+    </bottle>
+    <bottle>
+        <name>Pierre Ferrand's Dry Curacao</name>
+        <type>liqueur - orange</type>
+        <tasting>kind of sharp initially, tastes a little orangey which is good but the spirit feels like a not great vodka</tasting>
+        <rating>yes</rating>
+    </bottle>
+    <bottle>
+        <name>Plantation 3 Star</name>
+        <type>rum - light</type>
+        <tasting>slight burn on the mouth that lingers into some spicyness, rum taste =\</tasting>
+        <rating>yes</rating>
     </bottle>
     <bottle>
         <name>Russian Standard Platinum</name>
@@ -85,9 +85,9 @@
         <rating>unrated</rating>
     </bottle>
     <bottle>
-        <name>Buffalo Trace</name>
-        <type>whiskey - bourbon</type>
-        <tasting>spicyness when it hits your tongue, burns on the way down, sickly aftertaste, I don't think I like bourbon</tasting>
-        <rating>probably not</rating>
+        <name>Tanqueray</name>
+        <type>gin - london dry</type>
+        <tasting>Very strong juniper, extremely dry and the herbs hit you in the face</tasting>
+        <rating>probably</rating>
     </bottle>
 </ingredients>
