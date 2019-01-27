@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <recipes>
     <recipe>
+        <name>Almond Blossom Crusta</name>
+        <source>Kindred Cocktails</source>
+        <ingredient group="spirit">
+            <name>cognac</name>
+            <amount>1.5</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>gin - london dry</name>
+            <amount>0.5</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sour">
+            <name>lemon juice</name>
+            <amount>0.75</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sweet">
+            <name>orgeat</name>
+            <amount>0.75</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <garnish/>
+        <style>shaken</style>
+        <served>up</served>
+        <special/>
+    </recipe>
+    <recipe>
         <name>Daiquiri</name>
         <source>Tom Macy</source>
         <ingredient group="sour">

@@ -150,12 +150,12 @@ public class Cocktail {
      * @param  ct Cocktail which we are looking for the spirit of 
      * @return    String of what type the spirit in the drink is or blank
      */
-    public String findSpirit(Cocktail ct){
+    public String findSpiritType(Cocktail ct){
         ArrayList<Ingredient> list = ct.getIngredients();
         for(int ii=0; ii<list.size(); ii++) {
             if(list.get(ii).getGroup().equals("spirit")) {
                 // System.out.println(list.get(ii));
-                return list.get(ii).getName();
+                return list.get(ii).getType() + list.get(ii).getName();
             }
         }
         return "";
@@ -168,8 +168,8 @@ public class Cocktail {
      * @return       compareTo int
      */
     public int compareTo(Cocktail other) { 
-        String thisSpirit = findSpirit(this);
-        String otherSpirit = findSpirit(other);
+        String thisSpirit = findSpiritType(this);
+        String otherSpirit = findSpiritType(other);
         // System.out.println("Comparing " + thisSpirit + " and " + otherSpirit);
         int comp = thisSpirit.compareTo(otherSpirit); 
         if(comp != 0) { // Not the same bottle
