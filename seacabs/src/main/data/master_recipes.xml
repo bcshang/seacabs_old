@@ -31,14 +31,14 @@
     <recipe>
         <name>Daiquiri</name>
         <source>Tom Macy</source>
-        <ingredient group="sour">
-            <name>lime juice</name>
-            <amount>1.0</amount>
-            <unit>oz</unit>
-        </ingredient>
         <ingredient group="spirit">
             <name>rum - light</name>
             <amount>2.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sour">
+            <name>lime juice</name>
+            <amount>1.0</amount>
             <unit>oz</unit>
         </ingredient>
         <ingredient group="sweet">
@@ -50,5 +50,33 @@
         <style>shaken</style>
         <served>up</served>
         <special>N/A</special>
+    </recipe>
+    <recipe>
+        <name>Infante</name>
+        <source>Kindred Cocktails</source>
+        <ingredient group="spirit">
+            <name>tequila</name>
+            <amount>2.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sour">
+            <name>lime juice</name>
+            <amount>0.75</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="liquid">
+            <name>orange flower water</name>
+            <amount>3.0</amount>
+            <unit>thing</unit>
+        </ingredient>
+        <ingredient group="sweet">
+            <name>orgeat</name>
+            <amount>0.75</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <garnish>pinch nutmeg</garnish>
+        <style>shaken</style>
+        <served>up</served>
+        <special/>
     </recipe>
 </recipes>

@@ -140,10 +140,14 @@ public class Seacabs{
                     case "MASTER_RECIPES":
                         type = Common.XMLType.MASTER_RECIPES;
                         masterCocktailLists.add(new SeaList((ArrayList<Cocktail>)Parse.parseFile(folder + splitString[0], type), type, splitString[0]));
+                        masterCocktailLists.get(0).sortList();
+                        Write.write(masterCocktailLists.get(0));
                         break;
                     case "PERSONAL_RECIPES":
                         type = Common.XMLType.PERSONAL_RECIPES;
                         personalCocktailLists.add(new SeaList((ArrayList<Cocktail>)Parse.parseFile(folder + splitString[0], type), type, splitString[0]));
+                        personalCocktailLists.get(0).sortList();
+                        Write.write(personalCocktailLists.get(0));
                         break;
                     case "MASTER_BOTTLES":
                         type = Common.XMLType.MASTER_BOTTLES;

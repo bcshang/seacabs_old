@@ -12,9 +12,17 @@
         <name>agave nectar - light</name>
         <description>nectar from the agave plant, a light version</description>
     </ingredient>
+    <ingredient group="spirit">
+        <name>cognac</name>
+        <description>Special type of brandy</description>
+    </ingredient>
     <ingredient group="liquid">
         <name>egg white</name>
         <description>white of an egg</description>
+    </ingredient>
+    <ingredient group="spirit">
+        <name>gin - london dry</name>
+        <description>herbal spirit</description>
     </ingredient>
     <ingredient group="liquid">
         <name>grapefruit soda</name>
@@ -25,12 +33,20 @@
         <description>3 parts honey to 1 part water by weight, simply stir together</description>
     </ingredient>
     <ingredient group="sour">
+        <name>lemon juice</name>
+        <description>juice of a lemon</description>
+    </ingredient>
+    <ingredient group="sour">
         <name>lime juice</name>
         <description>juice of a lime</description>
     </ingredient>
     <ingredient group="plant">
         <name>mint</name>
         <description>mint leaves</description>
+    </ingredient>
+    <ingredient group="sweet">
+        <name>orgeat</name>
+        <description>almond sweetener</description>
     </ingredient>
     <ingredient group="fruit">
         <name>raspberry</name>

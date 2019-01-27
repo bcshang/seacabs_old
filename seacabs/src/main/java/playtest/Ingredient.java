@@ -144,21 +144,31 @@ public class Ingredient {
      * @return       compareTo output
      */
     public int compareTo(Ingredient other) {
-        if(this.ingt == ingType.BOTTLE && other.ingt == ingType.BOTTLE) {
-                int comp = this.getType().compareTo(other.getType());
-                if(comp == 0) {
-                    return this.getName().compareTo(other.getName());
-                }
-                else{
-                    return comp;
-                } 
+        // if(this.ingt == ingType.BOTTLE && other.ingt == ingType.BOTTLE) {
+        //         int comp = this.getType().compareTo(other.getType());
+        //         if(comp == 0) {
+        //             return this.getName().compareTo(other.getName());
+        //         }
+        //         else{
+        //             return comp;
+        //         } 
+        // }
+        // TODO this feels wrong
+        if(this.group.equals("spirit") && other.group.equals("spirit")) {
+            if(this.getAmount() == other.getAmount()) // both are spirits, compare amounts
+                return this.getName().compareTo(other.getName());
+            else if(this.getAmount() > other.getAmount()) {
+                return -1;
+                // return ((Double)this.getAmount()).compareTo((Double)other.getAmount());
+            } else
+                return 1;
         }
-                
-        if(this.group == "spirit")
-            return 1;
-        else if(other.group == "spirit")
+        else if(this.group.equals("spirit")) {
             return -1;
-        else
+        }
+        else if(other.group.equals("spirit"))
+            return 1;
+        else 
             return this.getName().compareTo(other.getName());
     }
 
