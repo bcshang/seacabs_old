@@ -363,6 +363,8 @@ public class ctCreationGUIController {
         cTableGroup.setCellValueFactory(new PropertyValueFactory<>("group"));
         cTableAmount.setCellValueFactory(new PropertyValueFactory<>("amount"));
         cTableUnit.setCellValueFactory(new PropertyValueFactory<>("unit"));
+        cTasNotTextArea.setWrapText(true);
     }
+
 
 }

@@ -13,6 +13,12 @@
         <rating>yes</rating>
     </bottle>
     <bottle>
+        <name>Fords</name>
+        <type>gin - london dry</type>
+        <tasting>N/A</tasting>
+        <rating>unrated</rating>
+    </bottle>
+    <bottle>
         <name>Tanqueray</name>
         <type>gin - london dry</type>
         <tasting>Very strong juniper, extremely dry and the herbs hit you in the face</tasting>

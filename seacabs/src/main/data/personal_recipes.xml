@@ -29,13 +29,13 @@
         <name>Margarita</name>
         <source>Serious Eats</source>
         <ingredient group="spirit">
-            <name>Cointreau</name>
-            <amount>0.75</amount>
+            <name>Milagro Silver</name>
+            <amount>2.0</amount>
             <unit>oz</unit>
         </ingredient>
         <ingredient group="spirit">
-            <name>Milagro Silver</name>
-            <amount>2.0</amount>
+            <name>Cointreau</name>
+            <amount>0.75</amount>
             <unit>oz</unit>
         </ingredient>
         <ingredient group="sweet">
@@ -58,16 +58,6 @@
     <recipe>
         <name>Margarita</name>
         <source/>
-        <ingredient group="sweet">
-            <name>agave nectar - light</name>
-            <amount>0.5</amount>
-            <unit>oz</unit>
-        </ingredient>
-        <ingredient group="sour">
-            <name>lime juice</name>
-            <amount>0.75</amount>
-            <unit>oz</unit>
-        </ingredient>
         <ingredient group="spirit">
             <name>Milagro Silver</name>
             <amount>1.5</amount>
@@ -76,6 +66,16 @@
         <ingredient group="spirit">
             <name>Cointreau</name>
             <amount>0.5</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sweet">
+            <name>agave nectar - light</name>
+            <amount>0.5</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sour">
+            <name>lime juice</name>
+            <amount>0.75</amount>
             <unit>oz</unit>
         </ingredient>
         <garnish/>
@@ -88,11 +88,6 @@
     <recipe>
         <name>Margarita</name>
         <source/>
-        <ingredient group="sweet">
-            <name>agave nectar - light</name>
-            <amount>0.5</amount>
-            <unit>oz</unit>
-        </ingredient>
         <ingredient group="spirit">
             <name>Milagro Silver</name>
             <amount>1.0</amount>
@@ -103,11 +98,107 @@
             <amount>0.5</amount>
             <unit>oz</unit>
         </ingredient>
+        <ingredient group="sweet">
+            <name>agave nectar - light</name>
+            <amount>0.5</amount>
+            <unit>oz</unit>
+        </ingredient>
         <garnish/>
         <style>shaken</style>
         <served>up</served>
         <special/>
         <tasting>quite sweet, tequila dryness is almost non-existant, goes down pretty smooth</tasting>
+        <rating>maybe</rating>
+    </recipe>
+    <recipe>
+        <name>Margarita</name>
+        <source/>
+        <ingredient group="spirit">
+            <name>Milagro Silver</name>
+            <amount>1.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>Cointreau</name>
+            <amount>0.5</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sweet">
+            <name>agave nectar - light</name>
+            <amount>0.25</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sour">
+            <name>lime juice</name>
+            <amount>0.75</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <garnish/>
+        <style>shaken</style>
+        <served>up</served>
+        <special/>
+        <tasting>Sweet tasting drink with a slight but pleasant burn on the way down, low alcohol taste but pretty alcoholic, lot of sweetness
+F11</tasting>
+        <rating>probably</rating>
+    </recipe>
+    <recipe>
+        <name>Margarita</name>
+        <source/>
+        <ingredient group="spirit">
+            <name>Milagro Silver</name>
+            <amount>1.33</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>Pierre Ferrand's Dry Curacao</name>
+            <amount>0.5</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sweet">
+            <name>agave nectar - light</name>
+            <amount>0.25</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sour">
+            <name>lime juice</name>
+            <amount>1.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <garnish/>
+        <style>shaken</style>
+        <served>up</served>
+        <special/>
+        <tasting>Pleasant dryness from the tequila but not overly so, very easy down the throat and quite tasty, not overly sweet, next time double strain, strong</tasting>
+        <rating>yes</rating>
+    </recipe>
+    <recipe>
+        <name>Margarita</name>
+        <source/>
+        <ingredient group="spirit">
+            <name>Milagro Silver</name>
+            <amount>1.25</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>Cointreau</name>
+            <amount>0.5</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sweet">
+            <name>agave nectar - light</name>
+            <amount>0.25</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sour">
+            <name>lime juice</name>
+            <amount>1.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <garnish/>
+        <style>shaken</style>
+        <served>up</served>
+        <special/>
+        <tasting>tastes fine, slightly harsh initially, I think I prefer the curacao version, kinda strong, next time don't chill the limes</tasting>
         <rating>maybe</rating>
     </recipe>
     <recipe>

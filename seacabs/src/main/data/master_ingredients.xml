@@ -21,6 +21,14 @@
         <description>self explanatory, buy it in the soft drinks aisle</description>
     </ingredient>
     <ingredient group="sweet">
+        <name>grenadine</name>
+        <description>pomegranate simple syrup
+1 cup pomegranate juice
+1 cup white sugar
+1 tablespoon pomegranate molasses
+3/8 teaspoon orange flower water</description>
+    </ingredient>
+    <ingredient group="sweet">
         <name>honey syrup (3:1)</name>
         <description>3 parts honey to 1 part water by weight, simply stir together</description>
     </ingredient>
