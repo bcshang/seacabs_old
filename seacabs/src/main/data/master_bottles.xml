@@ -15,9 +15,10 @@
     <bottle>
         <name>Fords</name>
         <type>gin - london dry</type>
-        <tasting></tasting>
+        <tasting>N/A</tasting>
         <rating>unrated</rating>
-    </bottle><bottle>
+    </bottle>
+    <bottle>
         <name>Tanqueray</name>
         <type>gin - london dry</type>
         <tasting>Very strong juniper, extremely dry and the herbs hit you in the face</tasting>
@@ -93,7 +94,7 @@
         <name>Sobieski</name>
         <type>vodka</type>
         <tasting>Tastes like nothing, burns the lips and on the way down but in the mouth is actually not bad at all</tasting>
-        <rating>unrated</rating>
+        <rating>probably</rating>
     </bottle>
     <bottle>
         <name>Buffalo Trace</name>

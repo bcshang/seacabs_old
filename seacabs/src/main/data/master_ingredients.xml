@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ingredients>
     <ingredient group="spirit">
-        <name>cognac</name>
-        <description>Special type of brandy</description>
+        <name>gin</name>
+        <description>very herbal spirit</description>
     </ingredient>
     <ingredient group="spirit">
-        <name>gin - london dry</name>
-        <description>herbal spirit</description>
+        <name>maraschino liqueur</name>
+        <description>liqueur made from cherries but doens't taste of cherry</description>
     </ingredient>
     <ingredient group="spirit">
         <name>rum - aged</name>
         <description>typically amber and aged</description>
     </ingredient>
     <ingredient group="spirit">
+        <name>cognac</name>
+        <description>Special type of brandy</description>
+    </ingredient>
+    <ingredient group="spirit">
         <name>rum - light</name>
         <description>typically clear or white and either unaged or aged very little</description>
     </ingredient>
     <ingredient group="spirit">
-        <name>tequila</name>
-        <description>typical mexican spirit</description>
+        <name>sweet vermouth</name>
+        <description>fortified wine</description>
+    </ingredient>
+    <ingredient group="spirit">
+        <name>vodka</name>
+        <description>neutral spirit</description>
     </ingredient>
     <ingredient group="bitters">
         <name>Angostura Bitters</name>
@@ -40,9 +48,13 @@
         <name>grapefruit soda</name>
         <description>self explanatory, buy it in the soft drinks aisle</description>
     </ingredient>
+    <ingredient group="liqueur">
+        <name>green chartreuse</name>
+        <description>herbal liqueur</description>
+    </ingredient>
     <ingredient group="sweet">
         <name>grenadine</name>
-        <description>A pomegranite syrup:
+        <description>pomegranate simple syrup
 1 cup pomegranate juice
 1 cup white sugar
 1 tablespoon pomegranate molasses
@@ -60,11 +72,19 @@
         <name>lime juice</name>
         <description>juice of a lime</description>
     </ingredient>
+    <ingredient group="sweet">
+        <name>maple syrup</name>
+        <description>syrup from maple trees?</description>
+    </ingredient>
     <ingredient group="plant">
         <name>mint</name>
         <description>mint leaves</description>
     </ingredient>
-    <ingredient group="nut">
+    <ingredient group="liqueur">
+        <name>orange liqueur</name>
+        <description>orange flavored liqueur</description>
+    </ingredient>
+    <ingredient group="plant">
         <name>nutmeg</name>
         <description>nutmeg</description>
     </ingredient>
