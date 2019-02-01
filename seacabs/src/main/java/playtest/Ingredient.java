@@ -144,7 +144,8 @@ public class Ingredient {
      * @return       compareTo output
      */
     public int compareTo(Ingredient other) {
-        if(this.group.equals("spirit") && other.group.equals("spirit")) {
+        if(this.ingt != ingType.MINIMAL)
+            if(this.group.equals("spirit") && other.group.equals("spirit")) {
             // both spirits, check size
             if(this.amount > other.amount) {
                 return -1;
@@ -152,14 +153,14 @@ public class Ingredient {
                 return 1;
             } else
                 return this.name.compareTo(other.name);
+            
+
+            if(this.group.equals("spirit"))
+                return -1;
+            else if(other.group.equals("spirit"))
+                return 1;
         }
-                
-        if(this.group.equals("spirit"))
-            return -1;
-        else if(other.group.equals("spirit"))
-            return 1;
-        else
-            return this.getName().compareTo(other.getName());
+        return this.getName().compareTo(other.getName());
     }
 
 

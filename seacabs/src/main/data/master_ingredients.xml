@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ingredients>
+    <ingredient group="spirit">
+        <name>gin</name>
+        <description>very herbal spirit</description>
+    </ingredient>
+    <ingredient group="spirit">
+        <name>maraschino liqueur</name>
+        <description>liqueur made from cherries but doens't taste of cherry</description>
+    </ingredient>
+    <ingredient group="spirit">
+        <name>rum - aged</name>
+        <description>typically amber and aged</description>
+    </ingredient>
+    <ingredient group="spirit">
+        <name>rum - light</name>
+        <description>typically clear or white and either unaged or aged very little</description>
+    </ingredient>
+    <ingredient group="spirit">
+        <name>sweet vermouth</name>
+        <description>fortified wine</description>
+    </ingredient>
+    <ingredient group="spirit">
+        <name>vodka</name>
+        <description>neutral spirit</description>
+    </ingredient>
     <ingredient group="bitters">
         <name>Angostura Bitters</name>
         <description>bitters made from something</description>
@@ -20,6 +44,10 @@
         <name>grapefruit soda</name>
         <description>self explanatory, buy it in the soft drinks aisle</description>
     </ingredient>
+    <ingredient group="liqueur">
+        <name>green chartreuse</name>
+        <description>herbal liqueur</description>
+    </ingredient>
     <ingredient group="sweet">
         <name>grenadine</name>
         <description>pomegranate simple syrup
@@ -33,24 +61,28 @@
         <description>3 parts honey to 1 part water by weight, simply stir together</description>
     </ingredient>
     <ingredient group="sour">
+        <name>lemon juice</name>
+        <description>juice of a lemon</description>
+    </ingredient>
+    <ingredient group="sour">
         <name>lime juice</name>
         <description>juice of a lime</description>
+    </ingredient>
+    <ingredient group="sweet">
+        <name>maple syrup</name>
+        <description>syrup from maple trees?</description>
     </ingredient>
     <ingredient group="plant">
         <name>mint</name>
         <description>mint leaves</description>
     </ingredient>
+    <ingredient group="liqueur">
+        <name>orange liqueur</name>
+        <description>orange flavored liqueur</description>
+    </ingredient>
     <ingredient group="fruit">
         <name>raspberry</name>
         <description>a raspberry</description>
-    </ingredient>
-    <ingredient group="spirit">
-        <name>rum - aged</name>
-        <description>typically amber and aged</description>
-    </ingredient>
-    <ingredient group="spirit">
-        <name>rum - light</name>
-        <description>typically clear or white and either unaged or aged very little</description>
     </ingredient>
     <ingredient group="sweet">
         <name>simple syrup</name>
