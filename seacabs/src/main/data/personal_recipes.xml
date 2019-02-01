@@ -26,6 +26,61 @@
         <rating>maybe</rating>
     </recipe>
     <recipe>
+        <name>Daiquri Riff</name>
+        <source>reddit</source>
+        <ingredient group="spirit">
+            <name>El Dorado 8</name>
+            <amount>1.5</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sweet">
+            <name>grenadine</name>
+            <amount>0.75</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sour">
+            <name>lime juice</name>
+            <amount>0.75</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <garnish/>
+        <style>shaken</style>
+        <served>up</served>
+        <special/>
+        <tasting>Kinda reminds me of a honeysuckle, the rum is pretty strong and the grenadine almost doesn't show up at all.</tasting>
+        <rating>probably not</rating>
+    </recipe>
+    <recipe>
+        <name>Clover Club</name>
+        <source/>
+        <ingredient group="spirit">
+            <name>Fords</name>
+            <amount>2.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="liquid">
+            <name>egg white</name>
+            <amount>1.0</amount>
+            <unit>thing</unit>
+        </ingredient>
+        <ingredient group="sweet">
+            <name>grenadine</name>
+            <amount>1.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sour">
+            <name>lemon juice</name>
+            <amount>1.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <garnish/>
+        <style>reverse dry shake</style>
+        <served>up</served>
+        <special/>
+        <tasting>Very pleasant light gin flavor and good mouthfeel. Definitely not strong tasting and goes down quite smooth</tasting>
+        <rating>yes</rating>
+    </recipe>
+    <recipe>
         <name>Margarita</name>
         <source>Serious Eats</source>
         <ingredient group="spirit">

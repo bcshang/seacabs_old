@@ -271,6 +271,7 @@ public class ctCreationGUIController {
         }
         addedToList.add(ct);
 
+        System.out.println("Recipe Saved!");
 
         cnameTextField.clear();
         cSourceTextField.clear();
@@ -363,6 +364,8 @@ public class ctCreationGUIController {
         cTableGroup.setCellValueFactory(new PropertyValueFactory<>("group"));
         cTableAmount.setCellValueFactory(new PropertyValueFactory<>("amount"));
         cTableUnit.setCellValueFactory(new PropertyValueFactory<>("unit"));
+
+        cTasNotTextArea.setWrapText(true);
     }
 
 }

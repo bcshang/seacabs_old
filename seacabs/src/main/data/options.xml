@@ -16,10 +16,12 @@
         <unit>bunches</unit>
         <unit>cl</unit>
         <unit>dash</unit>
+        <unit>drop</unit>
         <unit>leaves</unit>
         <unit>ml</unit>
         <unit>oz</unit>
         <unit>pieces</unit>
+        <unit>pinch</unit>
         <unit>thing</unit>
     </option>
     <option type="inggroup">
@@ -28,6 +30,7 @@
         <inggroup>liqueur</inggroup>
         <inggroup>liquid</inggroup>
         <inggroup>plant</inggroup>
+        <inggroup>nut</inggroup>
         <inggroup>sour</inggroup>
         <inggroup>spirit</inggroup>
         <inggroup>sweet</inggroup>

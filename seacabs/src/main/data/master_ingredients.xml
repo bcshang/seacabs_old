@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ingredients>
+    <ingredient group="spirit">
+        <name>cognac</name>
+        <description>Special type of brandy</description>
+    </ingredient>
+    <ingredient group="spirit">
+        <name>gin - london dry</name>
+        <description>herbal spirit</description>
+    </ingredient>
+    <ingredient group="spirit">
+        <name>rum - aged</name>
+        <description>typically amber and aged</description>
+    </ingredient>
+    <ingredient group="spirit">
+        <name>rum - light</name>
+        <description>typically clear or white and either unaged or aged very little</description>
+    </ingredient>
+    <ingredient group="spirit">
+        <name>tequila</name>
+        <description>typical mexican spirit</description>
+    </ingredient>
     <ingredient group="bitters">
         <name>Angostura Bitters</name>
         <description>bitters made from something</description>
@@ -21,6 +41,14 @@
         <description>self explanatory, buy it in the soft drinks aisle</description>
     </ingredient>
     <ingredient group="sweet">
+        <name>grenadine</name>
+        <description>A pomegranite syrup:
+1 cup pomegranate juice
+1 cup white sugar
+1 tablespoon pomegranate molasses
+3/8 teaspoon orange flower water</description>
+    </ingredient>
+    <ingredient group="sweet">
         <name>honey syrup (3:1)</name>
         <description>3 parts honey to 1 part water by weight, simply stir together</description>
     </ingredient>
@@ -36,7 +64,7 @@
         <name>mint</name>
         <description>mint leaves</description>
     </ingredient>
-    <ingredient group="plant">
+    <ingredient group="nut">
         <name>nutmeg</name>
         <description>nutmeg</description>
     </ingredient>
@@ -55,25 +83,5 @@
     <ingredient group="sweet">
         <name>simple syrup</name>
         <description>a solution made from equal parts by weight of water and white sugar, equal parts by volume can be substituted if necessary, heat solution until all sugar is dissovled</description>
-    </ingredient>
-    <ingredient group="spirit">
-        <name>cognac</name>
-        <description>Special type of brandy</description>
-    </ingredient>
-    <ingredient group="spirit">
-        <name>gin - london dry</name>
-        <description>herbal spirit</description>
-    </ingredient>
-    <ingredient group="spirit">
-        <name>rum - aged</name>
-        <description>typically amber and aged</description>
-    </ingredient>
-    <ingredient group="spirit">
-        <name>rum - light</name>
-        <description>typically clear or white and either unaged or aged very little</description>
-    </ingredient>
-    <ingredient group="spirit">
-        <name>tequila</name>
-        <description>typical mexican spirit</description>
     </ingredient>
 </ingredients>

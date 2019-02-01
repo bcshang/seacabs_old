@@ -4,13 +4,13 @@
         <name>Almond Blossom Crusta</name>
         <source>Kindred Cocktails</source>
         <ingredient group="spirit">
-            <name>gin - london dry</name>
-            <amount>0.5</amount>
+            <name>cognac</name>
+            <amount>1.5</amount>
             <unit>oz</unit>
         </ingredient>
         <ingredient group="spirit">
-            <name>cognac</name>
-            <amount>1.5</amount>
+            <name>gin - london dry</name>
+            <amount>0.5</amount>
             <unit>oz</unit>
         </ingredient>
         <ingredient group="sour">

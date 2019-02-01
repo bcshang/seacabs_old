@@ -26,16 +26,41 @@
         <rating>maybe</rating>
     </recipe>
     <recipe>
-        <name>Margarita</name>
-        <source>Serious Eats</source>
+        <name>Daiquri Riff</name>
+        <source>reddit</source>
         <ingredient group="spirit">
-            <name>Cointreau</name>
+            <name>El Dorado 8</name>
+            <amount>1.5</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sweet">
+            <name>grenadine</name>
             <amount>0.75</amount>
             <unit>oz</unit>
         </ingredient>
+        <ingredient group="sour">
+            <name>lime juice</name>
+            <amount>0.75</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <garnish/>
+        <style>shaken</style>
+        <served>up</served>
+        <special/>
+        <tasting>Kinda reminds me of a honeysuckle, the rum is pretty strong and the grenadine almost doesn't show up at all.</tasting>
+        <rating>probably not</rating>
+    </recipe>
+    <recipe>
+        <name>Margarita</name>
+        <source>Serious Eats</source>
         <ingredient group="spirit">
             <name>Milagro Silver</name>
             <amount>2.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>Cointreau</name>
+            <amount>0.75</amount>
             <unit>oz</unit>
         </ingredient>
         <ingredient group="sweet">
@@ -59,13 +84,13 @@
         <name>Margarita</name>
         <source/>
         <ingredient group="spirit">
-            <name>Cointreau</name>
-            <amount>0.5</amount>
+            <name>Milagro Silver</name>
+            <amount>1.5</amount>
             <unit>oz</unit>
         </ingredient>
         <ingredient group="spirit">
-            <name>Milagro Silver</name>
-            <amount>1.5</amount>
+            <name>Cointreau</name>
+            <amount>0.5</amount>
             <unit>oz</unit>
         </ingredient>
         <ingredient group="sweet">
@@ -89,13 +114,13 @@
         <name>Margarita</name>
         <source/>
         <ingredient group="spirit">
-            <name>Cointreau</name>
-            <amount>0.5</amount>
+            <name>Milagro Silver</name>
+            <amount>1.0</amount>
             <unit>oz</unit>
         </ingredient>
         <ingredient group="spirit">
-            <name>Milagro Silver</name>
-            <amount>1.0</amount>
+            <name>Cointreau</name>
+            <amount>0.5</amount>
             <unit>oz</unit>
         </ingredient>
         <ingredient group="sweet">
@@ -119,13 +144,13 @@
         <name>Margarita</name>
         <source/>
         <ingredient group="spirit">
-            <name>Cointreau</name>
-            <amount>0.5</amount>
+            <name>Milagro Silver</name>
+            <amount>1.25</amount>
             <unit>oz</unit>
         </ingredient>
         <ingredient group="spirit">
-            <name>Milagro Silver</name>
-            <amount>1.25</amount>
+            <name>Cointreau</name>
+            <amount>0.5</amount>
             <unit>oz</unit>
         </ingredient>
         <ingredient group="sweet">
@@ -144,6 +169,31 @@
         <special/>
         <tasting>tastes fine, slightly harsh initially, I think I prefer the curacao version, kinda strong, next time don't chill the limes</tasting>
         <rating>maybe</rating>
+    </recipe>
+    <recipe>
+        <name>Margarita</name>
+        <source/>
+        <ingredient group="spirit">
+            <name>Milagro Silver</name>
+            <amount>1.33</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>Pierre Ferrand's Dry Curacao</name>
+            <amount>0.5</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sour">
+            <name>lime juice</name>
+            <amount>1.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <garnish/>
+        <style>shaken</style>
+        <served>up</served>
+        <special/>
+        <tasting>Pleasant dryness from the tequila but not overly so, very easy down the throat and quite tasty, not overly sweet, next time double strain, strong</tasting>
+        <rating>yes</rating>
     </recipe>
     <recipe>
         <name>Paloma</name>
@@ -169,30 +219,5 @@
         <special>N/A</special>
         <tasting>hard to taste the grapefruit, tequila comes through a lot if using 2oz in a standard glass, lime juice untastable</tasting>
         <rating>no</rating>
-    </recipe>
-    <recipe>
-        <name>Margarita</name>
-        <source/>
-        <ingredient group="spirit">
-            <name>Pierre Ferrand's Dry Curacao</name>
-            <amount>0.5</amount>
-            <unit>oz</unit>
-        </ingredient>
-        <ingredient group="spirit">
-            <name>Milagro Silver</name>
-            <amount>1.33</amount>
-            <unit>oz</unit>
-        </ingredient>
-        <ingredient group="sour">
-            <name>lime juice</name>
-            <amount>1.0</amount>
-            <unit>oz</unit>
-        </ingredient>
-        <garnish/>
-        <style>shaken</style>
-        <served>up</served>
-        <special/>
-        <tasting>Pleasant dryness from the tequila but not overly so, very easy down the throat and quite tasty, not overly sweet, next time double strain, strong</tasting>
-        <rating>yes</rating>
     </recipe>
 </recipes>
