@@ -1,31 +1,26 @@
 package playtest;
 
-
-import java.util.ArrayList;
-
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
-public class ctCreationGUIDriver extends Application {
 
-    static ctCreationGUIController guiControl;
+public class Driver extends Application {
+
     static Seacabs seac;
-
+    static databaseController guiControl;
 
     @Override
     public void start(Stage stage) {
         Parent root;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("cocktailCreationGUI.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("databaseGUI.fxml"));
 
             root = loader.load();
-            guiControl = (ctCreationGUIController) loader.getController();
+            guiControl = (databaseController) loader.getController();
 
             guiControl.setSeac(seac);
 
@@ -40,6 +35,7 @@ public class ctCreationGUIDriver extends Application {
         }
     }
 
+
     public static void main(String[] args) {
 
         seac = new Seacabs(args);
@@ -48,3 +44,4 @@ public class ctCreationGUIDriver extends Application {
     }
 
 }
+
