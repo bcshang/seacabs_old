@@ -13,6 +13,7 @@
         <style>stirred</style>
     </option>
     <option type="unit">
+        <unit>barspoon</unit>
         <unit>bunches</unit>
         <unit>cl</unit>
         <unit>dash</unit>
