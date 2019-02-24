@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <recipes>
     <recipe>
+        <name>Mig Royale</name>
+        <source>kindred cocktails</source>
+        <ingredient group="spirit">
+            <name>champagne</name>
+            <amount>1.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>gin</name>
+            <amount>1.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>Cointreau</name>
+            <amount>0.75</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>maraschino liqueur</name>
+            <amount>0.5</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sour">
+            <name>lemon juice</name>
+            <amount>0.5</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <garnish/>
+        <style>shaken</style>
+        <served>up</served>
+        <special>top with champagne</special>
+    </recipe>
+    <recipe>
+        <name>Ritz Cocktail</name>
+        <source/>
+        <ingredient group="spirit">
+            <name>champagne</name>
+            <amount>4.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>cognac</name>
+            <amount>1.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>Cointreau</name>
+            <amount>0.5</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>maraschino liqueur</name>
+            <amount>0.25</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sour">
+            <name>lemon juice</name>
+            <amount>0.25</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <garnish>flamed orange peel</garnish>
+        <style>shaken</style>
+        <served>up</served>
+        <special/>
+    </recipe>
+    <recipe>
         <name>Almond Blossom Crusta</name>
         <source>Kindred Cocktails</source>
         <ingredient group="spirit">
@@ -164,6 +230,44 @@
         <special/>
     </recipe>
     <recipe>
+        <name>Missing Link</name>
+        <source>kindred cocktails</source>
+        <ingredient group="spirit">
+            <name>maraschino liqueur</name>
+            <amount>0.75</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>rum - aged</name>
+            <amount>0.75</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>rum - light</name>
+            <amount>0.75</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sour">
+            <name>lime juice</name>
+            <amount>0.75</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sweet">
+            <name>simple syrup</name>
+            <amount>0.25</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="liquid">
+            <name>sparkling water</name>
+            <amount>2.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <garnish>mint sprig</garnish>
+        <style>shaken</style>
+        <served>up</served>
+        <special>top with the water</special>
+    </recipe>
+    <recipe>
         <name>Tequila Gumption</name>
         <source>kindred cocktails</source>
         <ingredient group="spirit">
@@ -220,6 +324,39 @@
         <special/>
     </recipe>
     <recipe>
+        <name>2nd Potion</name>
+        <source>how to drink</source>
+        <ingredient group="spirit">
+            <name>rum - light</name>
+            <amount>2.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>maraschino liqueur</name>
+            <amount>0.25</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sour">
+            <name>lime juice</name>
+            <amount>1.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sweet">
+            <name>simple syrup</name>
+            <amount>1.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="liquid">
+            <name>sparkling water</name>
+            <amount>3.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <garnish/>
+        <style>shaken</style>
+        <served>up</served>
+        <special>Shaken and topped with sparkling water</special>
+    </recipe>
+    <recipe>
         <name>Cubanada</name>
         <source/>
         <ingredient group="spirit">
@@ -264,6 +401,39 @@
         <style>shaken</style>
         <served>up</served>
         <special>N/A</special>
+    </recipe>
+    <recipe>
+        <name>Santiago</name>
+        <source>kindred cocktails</source>
+        <ingredient group="spirit">
+            <name>rum - light</name>
+            <amount>2.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>maraschino liqueur</name>
+            <amount>1.0</amount>
+            <unit>barspoon</unit>
+        </ingredient>
+        <ingredient group="bitters">
+            <name>Angostura Bitters</name>
+            <amount>1.0</amount>
+            <unit>dash</unit>
+        </ingredient>
+        <ingredient group="sour">
+            <name>lime juice</name>
+            <amount>0.75</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sweet">
+            <name>simple syrup</name>
+            <amount>0.5</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <garnish/>
+        <style>shaken</style>
+        <served>up</served>
+        <special>Green Chartreuse rinse</special>
     </recipe>
     <recipe>
         <name>Slurred Word</name>

@@ -31,6 +31,12 @@
         <rating>no</rating>
     </bottle>
     <bottle>
+        <name>Luxardo Maraschino</name>
+        <type>liqueur - maraschino</type>
+        <tasting>N/A</tasting>
+        <rating>unrated</rating>
+    </bottle>
+    <bottle>
         <name>Cointreau</name>
         <type>liqueur - orange</type>
         <tasting>sharp but with a nice orange taste, mild-strong burn on the way down, quite surprisingly sorta pleasant</tasting>

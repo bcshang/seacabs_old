@@ -26,6 +26,41 @@
         <rating>maybe</rating>
     </recipe>
     <recipe>
+        <name>2nd Potion</name>
+        <source>how to drink</source>
+        <ingredient group="spirit">
+            <name>El Dorado 3</name>
+            <amount>2.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>Luxardo Maraschino</name>
+            <amount>0.25</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sour">
+            <name>lime juice</name>
+            <amount>1.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="sweet">
+            <name>simple syrup</name>
+            <amount>1.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="liquid">
+            <name>sparkling water</name>
+            <amount>3.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <garnish/>
+        <style>shaken</style>
+        <served>up</served>
+        <special>Shake and top with sparkling water</special>
+        <tasting>Mainly maraschino flavor suprisingly enough. It's quite light to drink but a little stronger than expected. Tastes fine after it's warmed up too</tasting>
+        <rating>probably</rating>
+    </recipe>
+    <recipe>
         <name>Margarita</name>
         <source>Serious Eats</source>
         <ingredient group="spirit">

@@ -13,6 +13,10 @@
         <description>nectar from the agave plant, a light version</description>
     </ingredient>
     <ingredient group="spirit">
+        <name>champagne</name>
+        <description>bubbles!</description>
+    </ingredient>
+    <ingredient group="spirit">
         <name>cognac</name>
         <description>Special type of brandy</description>
     </ingredient>
@@ -107,6 +111,10 @@
     <ingredient group="sweet">
         <name>simple syrup</name>
         <description>a solution made from equal parts by weight of water and white sugar, equal parts by volume can be substituted if necessary, heat solution until all sugar is dissovled</description>
+    </ingredient>
+    <ingredient group="liquid">
+        <name>sparkling water</name>
+        <description>carbonated water</description>
     </ingredient>
     <ingredient group="spirit">
         <name>sweet vermouth</name>
