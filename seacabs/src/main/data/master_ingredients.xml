@@ -32,6 +32,10 @@
         <name>gin</name>
         <description>very herbal spirit</description>
     </ingredient>
+    <ingredient group="sweet">
+        <name>ginger syrup</name>
+        <description>syrup with ginger and demerara, see how to drink's youtube guide</description>
+    </ingredient>
     <ingredient group="liquid">
         <name>grapefruit soda</name>
         <description>self explanatory, buy it in the soft drinks aisle</description>
@@ -47,6 +51,10 @@
 1 cup white sugar
 1 tablespoon pomegranate molasses
 3/8 teaspoon orange flower water</description>
+    </ingredient>
+    <ingredient group="plant">
+        <name>ground black pepper</name>
+        <description>wtf why</description>
     </ingredient>
     <ingredient group="sweet">
         <name>honey syrup (1:1)</name>
@@ -120,9 +128,17 @@
         <name>sparkling water</name>
         <description>carbonated water</description>
     </ingredient>
+    <ingredient group="fruit">
+        <name>strawberry</name>
+        <description>yay!</description>
+    </ingredient>
     <ingredient group="spirit">
         <name>sweet vermouth</name>
         <description>fortified wine</description>
+    </ingredient>
+    <ingredient group="spirit">
+        <name>tequila</name>
+        <description>shots shots shots</description>
     </ingredient>
     <ingredient group="spirit">
         <name>tequila - reposado</name>

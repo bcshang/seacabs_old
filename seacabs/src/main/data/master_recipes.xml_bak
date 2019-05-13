@@ -95,6 +95,34 @@
         <special/>
     </recipe>
     <recipe>
+        <name>Unknown</name>
+        <source>reddit</source>
+        <ingredient group="spirit">
+            <name>cognac</name>
+            <amount>2.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>maraschino liqueur</name>
+            <amount>0.5</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="bitters">
+            <name>Peychaud's bitters</name>
+            <amount>2.0</amount>
+            <unit>dash</unit>
+        </ingredient>
+        <ingredient group="fruit">
+            <name>pineapple juice</name>
+            <amount>0.5</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <garnish/>
+        <style>shaken</style>
+        <served>up</served>
+        <special/>
+    </recipe>
+    <recipe>
         <name>Aviation</name>
         <source/>
         <ingredient group="spirit">
@@ -464,6 +492,29 @@
             <unit>oz</unit>
         </ingredient>
         <garnish/>
+        <style>shaken</style>
+        <served>up</served>
+        <special/>
+    </recipe>
+    <recipe>
+        <name>Fancy Vermouth Cocktail</name>
+        <source>reddit</source>
+        <ingredient group="spirit">
+            <name>sweet vermouth</name>
+            <amount>3.0</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="spirit">
+            <name>maraschino liqueur</name>
+            <amount>0.25</amount>
+            <unit>oz</unit>
+        </ingredient>
+        <ingredient group="bitters">
+            <name>Angostura Bitters</name>
+            <amount>2.0</amount>
+            <unit>dash</unit>
+        </ingredient>
+        <garnish>lemon peel</garnish>
         <style>shaken</style>
         <served>up</served>
         <special/>
